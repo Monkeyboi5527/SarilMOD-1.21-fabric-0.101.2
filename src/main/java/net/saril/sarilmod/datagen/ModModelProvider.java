@@ -52,5 +52,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CHISEL, Models.GENERATED);
         itemModelGenerator.register(ModItems.BANANA, Models.GENERATED);
         itemModelGenerator.register(ModItems.DARK_CRYSTAL, Models.GENERATED);
+
+
+        itemModelGenerator.register(ModItems.SOLAR_MATTER_SWORD, Models.HANDHELD_MACE);
+        itemModelGenerator.register(ModItems.SOLAR_MATTER_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.SOLAR_MATTER_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.SOLAR_MATTER_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.SOLAR_MATTER_HOE, Models.HANDHELD);
     }
 }

@@ -36,7 +36,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(ModTags.Blocks.NEEDS_SOLAR_MATTER_TOOl)
                 .add(ModBlocks.MAGIC_BLOCK)
-                .add(BlockTags.NEEDS_DIAMOND_TOOL.id());
+                .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
 
     }
 }

@@ -6,7 +6,6 @@ import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.saril.sarilmod.SarilMod;
@@ -37,7 +36,7 @@ public class ModItems {
                     .fireproof()
                     .attributeModifiers(
                             SwordItem.createAttributeModifiers(
-                                    ModToolMaterials.SOLAR_MATTER, 5, -2.8F))));
+                                    ModToolMaterials.SOLAR_MATTER, 10, -3.0F))));
 
     public static final Item SOLAR_MATTER_PICKAXE = registerItem("solar_matter_pickaxe",
             new PickaxeItem(ModToolMaterials.SOLAR_MATTER, new Item.Settings()
@@ -49,7 +48,7 @@ public class ModItems {
 
     public static final Item SOLAR_MATTER_AXE = registerItem("solar_matter_axe",
             new AxeItem(ModToolMaterials.SOLAR_MATTER, new Item.Settings()
-                    .attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.SOLAR_MATTER, 6, -3.2f)).rarity(Rarity.EPIC)));
+                    .attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.SOLAR_MATTER, 12, -2.8f)).rarity(Rarity.EPIC)));
 
     public static final Item SOLAR_MATTER_HOE = registerItem("solar_matter_hoe",
             new HoeItem(ModToolMaterials.SOLAR_MATTER, new Item.Settings()

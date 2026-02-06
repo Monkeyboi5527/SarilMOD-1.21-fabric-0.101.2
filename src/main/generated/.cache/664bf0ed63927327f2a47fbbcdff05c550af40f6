@@ -1,6 +1,7 @@
-// 1.21	2026-01-27T19:50:39.5479572	SarilMOD/Tags for minecraft:block
+// 1.21	2026-02-05T21:11:03.5595946	SarilMOD/Tags for minecraft:block
 1de8fcc51a2c833781363832c291d1432a118520 data\minecraft\tags\block\mineable\pickaxe.json
 3ffaaf64d08a86861f49d6c9f6f3b238b0a7b1a1 data\minecraft\tags\block\needs_diamond_tool.json
 091f55c43168339248f87f7327e834fad10e15ca data\minecraft\tags\block\walls.json
+075f966f56092fc002535fa856f2dc3a8dad5e34 data\minecraft\tags\block\sarilmod.json
 ccc0d1d8cebf25a2f37b86ca51c67f44badde63b data\minecraft\tags\block\fences.json
 a5c66ec9cf9796612b936d74055090c855a5f9eb data\minecraft\tags\block\fence_gates.json
