@@ -1,0 +1,34 @@
+{
+  "item.sarilmod.solar_matter": "Solar Matter",
+  "item.sarilmod.unstable_solar_matter": "Unstable Solar Matter",
+  "item.sarilmod.chisel": "Chisel",
+  "tooltip.sarilmod.chisel.tooltip.shift_down": "This item chisels blocks into Bricks!",
+  "tooltip.sarilmod.chisel.tooltip" : "Press §eShift§r for more Information!",
+  "item.sarilmod.banana": "Banana",
+  "tooltip.sarilmod.banana": "Banana Banana Banana Banana",
+  "item.sarilmod.dark_crystal": "Dark Crystal",
+  "item.sarilmod.solar_matter_sword": "Solar Matter Sword",
+  "item.sarilmod.solar_matter_pickaxe": "Solar Matter Pickaxe",
+  "item.sarilmod.solar_matter_shovel": "Solar Matter Shovel",
+  "item.sarilmod.solar_matter_axe": "Solar Matter Axe",
+  "item.sarilmod.solar_matter_hoe": "Solar Matter Hoe",
+
+  "block.sarilmod.solar_matter_block": "Solar Matter Block",
+  "block.sarilmod.unstable_solar_matter_block": "Unstable Solar Matter Block",
+  "block.sarilmod.unstable_solar_matter_ore": "Unstable Solar Matter Ore",
+  "block.sarilmod.deepslate_unstable_solar_matter_ore": "Deepslate Unstable Solar Matter Ore",
+  "block.sarilmod.magic_block": "Magic Block",
+  "block.sarilmod.solar_matter_lamp": "Solar Matter Lamp",
+  "tooltip.sarilmod.magicblock.tooltip": "§c§lBoom§r§r",
+
+  "block.sarilmod.solar_matter_button": "Solar Matter Button",
+  "block.sarilmod.solar_matter_pressure_plate": "Solar Matter Pressure Plate",
+  "block.sarilmod.solar_matter_fence": "Solar Matter Fence",
+  "block.sarilmod.solar_matter_fence_gate": "Solar Matter Fence Gate",
+  "block.sarilmod.solar_matter_door": "Solar Matter Door",
+  "block.sarilmod.solar_matter_trapdoor": "Solar Matter Trapdoor",
+  "block.sarilmod.solar_matter_wall": "Solar Matter Wall",
+  "block.sarilmod.solar_matter_slab": "Solar Matter Slab",
+
+  "itemgroup.sarilmod.sarilmod": "SarilMOD"
+}

@@ -1,0 +1,56 @@
+package net.saril.sarilmod.datagen;
+
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.data.client.*;
+import net.minecraft.util.Identifier;
+import net.saril.sarilmod.block.ModBlocks;
+import net.saril.sarilmod.block.custom.SolarMatterLampBlock;
+import net.saril.sarilmod.item.ModItems;
+
+public class ModModelProvider extends FabricModelProvider {
+    public ModModelProvider(FabricDataOutput output) {
+        super(output);
+    }
+
+    @Override
+    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        BlockStateModelGenerator.BlockTexturePool solarMatterPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.SOLAR_MATTER_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.UNSTABLE_SOLAR_MATTER_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.UNSTABLE_SOLAR_MATTER_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_UNSTABLE_SOLAR_MATTER_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MAGIC_BLOCK);
+
+        solarMatterPool.stairs(ModBlocks.SOLAR_MATTER_STAIRS);
+        solarMatterPool.slab(ModBlocks.SOLAR_MATTER_SLAB);
+
+        solarMatterPool.button(ModBlocks.SOLAR_MATTER_BUTTON);
+        solarMatterPool.pressurePlate(ModBlocks.SOLAR_MATTER_PRESSURE_PLATE);
+
+        solarMatterPool.fence(ModBlocks.SOLAR_MATTER_FENCE);
+        solarMatterPool.fenceGate(ModBlocks.SOLAR_MATTER_FENCE_GATE);
+        solarMatterPool.wall(ModBlocks.SOLAR_MATTER_WALL);
+
+        blockStateModelGenerator.registerDoor(ModBlocks.SOLAR_MATTER_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.SOLAR_MATTER_TRAPDOOR);
+
+        Identifier lampOffIdentifier = TexturedModel.CUBE_ALL.upload(ModBlocks.SOLAR_MATTER_LAMP, blockStateModelGenerator.modelCollector);
+        Identifier lampOnIdentifier = blockStateModelGenerator.createSubModel(ModBlocks.SOLAR_MATTER_LAMP, "_on", Models.CUBE_ALL, TextureMap::all);
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.SOLAR_MATTER_LAMP)
+                .coordinate(BlockStateModelGenerator.createBooleanModelMap(SolarMatterLampBlock.CLICKED, lampOnIdentifier, lampOffIdentifier)));
+
+
+        
+
+    }
+
+
+    @Override
+    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        itemModelGenerator.register(ModItems.SOLAR_MATTER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.UNSTABLE_SOLAR_MATTER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHISEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.BANANA, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DARK_CRYSTAL, Models.GENERATED);
+    }
+}

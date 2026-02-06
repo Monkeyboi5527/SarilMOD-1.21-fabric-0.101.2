@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 600,
+  "experience": 0.5,
+  "group": "solar_matter_from_smelting",
+  "ingredient": {
+    "item": "sarilmod:unstable_solar_matter"
+  },
+  "result": {
+    "id": "sarilmod:unstable_solar_matter"
+  }
+}

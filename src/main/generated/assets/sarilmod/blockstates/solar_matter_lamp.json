@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "clicked=false": {
+      "model": "sarilmod:block/solar_matter_lamp"
+    },
+    "clicked=true": {
+      "model": "sarilmod:block/solar_matter_lamp_on"
+    }
+  }
+}
