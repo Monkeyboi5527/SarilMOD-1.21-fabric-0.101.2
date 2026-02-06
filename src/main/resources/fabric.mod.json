@@ -3,11 +3,11 @@
 	"id": "sarilmod",
 	"version": "${version}",
 	"name": "SarilMOD",
-	"description": "MOod",
+	"description": "MOD",
 	"authors": [
 		"Saril Laguri"
 	],
-	"license": "All Rights Reserved",
+	"license": "MIT",
 	"icon": "assets/sarilmod/icon.png",
 	"environment": "*",
 	"entrypoints": {
