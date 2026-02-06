@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sarilmod:block/solar_matter_slab"
+    },
+    "type=double": {
+      "model": "sarilmod:block/solar_matter_block"
+    },
+    "type=top": {
+      "model": "sarilmod:block/solar_matter_slab_top"
+    }
+  }
+}

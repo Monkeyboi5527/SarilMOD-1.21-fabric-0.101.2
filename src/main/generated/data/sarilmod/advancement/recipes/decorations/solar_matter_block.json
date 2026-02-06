@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_solar_matter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sarilmod:solar_matter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:solar_matter_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_solar_matter"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:solar_matter_block"
+    ]
+  }
+}

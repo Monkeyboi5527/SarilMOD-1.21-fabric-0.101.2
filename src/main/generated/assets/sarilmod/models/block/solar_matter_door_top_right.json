@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "sarilmod:block/solar_matter_door_bottom",
+    "top": "sarilmod:block/solar_matter_door_top"
+  }
+}

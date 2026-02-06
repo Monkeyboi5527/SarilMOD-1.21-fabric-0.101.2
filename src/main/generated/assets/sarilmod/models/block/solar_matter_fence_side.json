@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "sarilmod:block/solar_matter_block"
+  }
+}

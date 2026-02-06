@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "sarilmod",
+	"version": "${version}",
+	"name": "SarilMOD",
+	"description": "MOod",
+	"authors": [
+		"Saril Laguri"
+	],
+	"license": "All Rights Reserved",
+	"icon": "assets/sarilmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.saril.sarilmod.SarilMod"
+		],
+		"fabric-datagen": [
+			"net.saril.sarilmod.SarilModDataGenerator"
+		],
+		"client": [
+			"net.saril.sarilmod.SarilModClient"
+		]
+	},
+	"mixins": [
+		"sarilmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
