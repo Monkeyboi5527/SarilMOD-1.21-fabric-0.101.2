@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.saril.sarilmod.SarilMod;
 import net.saril.sarilmod.item.custom.ChiselItem;
+import net.saril.sarilmod.item.custom.HammerItem;
 
 import java.util.List;
 
@@ -53,6 +54,10 @@ public class ModItems {
     public static final Item SOLAR_MATTER_HOE = registerItem("solar_matter_hoe",
             new HoeItem(ModToolMaterials.SOLAR_MATTER, new Item.Settings()
                     .attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.SOLAR_MATTER, 0, -3f)).rarity(Rarity.EPIC)));
+
+    public static final Item SOLAR_MATTER_HAMMER = registerItem("solar_matter_hammer",
+            new HammerItem(ModToolMaterials.SOLAR_MATTER, new Item.Settings()
+                    .attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.SOLAR_MATTER, 7, -3.0f)).rarity(Rarity.EPIC)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(SarilMod.MOD_ID, name), item);

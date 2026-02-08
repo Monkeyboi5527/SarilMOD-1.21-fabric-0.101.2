@@ -42,6 +42,7 @@ public class ModItemGroups {
                         entries.add(ModItems.SOLAR_MATTER_SHOVEL);
                         entries.add(ModItems.SOLAR_MATTER_AXE);
                         entries.add(ModItems.SOLAR_MATTER_HOE);
+                        entries.add(ModItems.SOLAR_MATTER_HAMMER);
 
 
 
