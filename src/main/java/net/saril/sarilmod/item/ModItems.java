@@ -11,6 +11,7 @@ import net.minecraft.util.Rarity;
 import net.saril.sarilmod.SarilMod;
 import net.saril.sarilmod.item.custom.ChiselItem;
 import net.saril.sarilmod.item.custom.HammerItem;
+import net.saril.sarilmod.item.custom.ModArmorItem;
 
 import java.util.List;
 
@@ -66,7 +67,7 @@ public class ModItems {
                     .fireproof()));
 
     public static final Item SOLAR_MATTER_CHESTPLATE = registerItem("solar_matter_chestplate",
-            new ArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+            new ModArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()
                     .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))
                     .rarity(Rarity.EPIC)
                     .fireproof()));

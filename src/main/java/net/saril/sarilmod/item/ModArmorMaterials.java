@@ -18,11 +18,11 @@ import java.util.function.Supplier;
 public class ModArmorMaterials {
     public static final RegistryEntry<ArmorMaterial> SOLAR_MATTER_ARMOR_MATERIAL = registerArmorMaterial("solar_matter",
             () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 3);
-                map.put(ArmorItem.Type.LEGGINGS, 6);
-                map.put(ArmorItem.Type.CHESTPLATE, 8);
-                map.put(ArmorItem.Type.HELMET, 3);
-                map.put(ArmorItem.Type.BODY, 11);
+                map.put(ArmorItem.Type.BOOTS, 5);
+                map.put(ArmorItem.Type.LEGGINGS, 8);
+                map.put(ArmorItem.Type.CHESTPLATE, 10);
+                map.put(ArmorItem.Type.HELMET, 5);
+                map.put(ArmorItem.Type.BODY, 14);
             }), 20, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, () -> Ingredient.ofItems(ModItems.SOLAR_MATTER),
                     List.of(new ArmorMaterial.Layer(Identifier.of(SarilMod.MOD_ID, "solar_matter"))), 0,0));
 
