@@ -59,6 +59,32 @@ public class ModItems {
             new HammerItem(ModToolMaterials.SOLAR_MATTER, new Item.Settings()
                     .attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.SOLAR_MATTER, 7, -3.0f)).rarity(Rarity.EPIC)));
 
+    public static final Item SOLAR_MATTER_HELMET = registerItem("solar_matter_helmet",
+            new ArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
+                    .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))
+                    .rarity(Rarity.EPIC)
+                    .fireproof()));
+
+    public static final Item SOLAR_MATTER_CHESTPLATE = registerItem("solar_matter_chestplate",
+            new ArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()
+                    .maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(15))
+                    .rarity(Rarity.EPIC)
+                    .fireproof()));
+
+    public static final Item SOLAR_MATTER_LEGGINGS = registerItem("solar_matter_leggings",
+            new ArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Settings()
+                    .maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(15))
+                    .rarity(Rarity.EPIC)
+                    .fireproof()));
+
+    public static final Item SOLAR_MATTER_BOOTS = registerItem("solar_matter_boots",
+            new ArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings()
+                    .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))
+                    .rarity(Rarity.EPIC)
+                    .fireproof()));
+
+
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(SarilMod.MOD_ID, name), item);
     }

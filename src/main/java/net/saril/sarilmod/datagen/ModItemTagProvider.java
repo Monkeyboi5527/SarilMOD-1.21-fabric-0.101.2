@@ -37,6 +37,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.HOES)
                 .add(ModItems.SOLAR_MATTER_HOE);
 
+        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.SOLAR_MATTER_HELMET)
+                .add(ModItems.SOLAR_MATTER_CHESTPLATE)
+                .add(ModItems.SOLAR_MATTER_LEGGINGS)
+                .add(ModItems.SOLAR_MATTER_BOOTS);
 
     }
 }

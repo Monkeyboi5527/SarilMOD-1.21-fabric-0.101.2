@@ -43,6 +43,11 @@ public class ModItemGroups {
                         entries.add(ModItems.SOLAR_MATTER_AXE);
                         entries.add(ModItems.SOLAR_MATTER_HOE);
                         entries.add(ModItems.SOLAR_MATTER_HAMMER);
+                        entries.add(ModItems.SOLAR_MATTER_HELMET);
+                        entries.add(ModItems.SOLAR_MATTER_CHESTPLATE);
+                        entries.add(ModItems.SOLAR_MATTER_LEGGINGS);
+                        entries.add(ModItems.SOLAR_MATTER_BOOTS);
+
 
 
 

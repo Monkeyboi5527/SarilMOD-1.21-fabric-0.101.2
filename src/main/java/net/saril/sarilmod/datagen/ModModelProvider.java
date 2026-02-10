@@ -3,6 +3,7 @@ package net.saril.sarilmod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
 import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.block.custom.SolarMatterLampBlock;
@@ -60,6 +61,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SOLAR_MATTER_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.SOLAR_MATTER_HOE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.SOLAR_MATTER_HAMMER, Models.HANDHELD);
+
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SOLAR_MATTER_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SOLAR_MATTER_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SOLAR_MATTER_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.SOLAR_MATTER_BOOTS);
+
 
         /*itemModelGenerator.register(
                 ModItems.SOLAR_MATTER_HAMMER,
