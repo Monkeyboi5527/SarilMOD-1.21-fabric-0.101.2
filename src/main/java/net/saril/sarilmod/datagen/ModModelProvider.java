@@ -60,5 +60,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SOLAR_MATTER_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.SOLAR_MATTER_HOE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.SOLAR_MATTER_HAMMER, Models.HANDHELD);
+
+        /*itemModelGenerator.register(
+                ModItems.SOLAR_MATTER_HAMMER,
+                new Model(Optional.of(id("item/solar_matter_hammer")), Optional.empty())
+        ); */
+
+
     }
 }
