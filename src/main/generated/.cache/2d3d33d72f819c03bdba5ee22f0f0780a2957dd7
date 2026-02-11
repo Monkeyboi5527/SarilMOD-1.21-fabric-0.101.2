@@ -1,4 +1,4 @@
-// 1.21	2026-02-09T20:35:57.1373743	SarilMOD/Model Definitions
+// 1.21	2026-02-10T19:36:37.9884347	SarilMOD/Model Definitions
 c257ee33b83f0d11e9b3ded590cf32d664f6e9e6 assets\sarilmod\blockstates\solar_matter_fence.json
 e20bbd8aa346b511ae3fcb677f85f1bd03068ec7 assets\sarilmod\models\item\solar_matter_fence.json
 28f9ec420e3d7e79d136af6d0cc3a4f33d65476e assets\sarilmod\models\item\solar_matter_leggings.json
@@ -87,6 +87,7 @@ e3ff25f0ba0971139a8dadfbbc9ad42dfcd49997 assets\sarilmod\models\item\solar_matte
 69bc945d9e836bc1374a569dce6d818926226f65 assets\sarilmod\models\item\solar_matter_trapdoor.json
 ff3cb6605402c499ba1a22d5952ab15b303c200e assets\sarilmod\models\item\solar_matter_boots_lapis_trim.json
 85e92b7ffbe2b9e626b1d446b867c28c0ad2437a assets\sarilmod\models\block\deepslate_unstable_solar_matter_ore.json
+216b6f543aba3a57e720c603f663d5da8fc6d150 assets\sarilmod\models\item\solar_matter_horse_armor.json
 4698dfaeb69fc68feda38659317396c8dcc06ae1 assets\sarilmod\models\item\solar_matter_helmet_amethyst_trim.json
 f46e89e4c84b0be2230ed85b44cdc16b70622e0b assets\sarilmod\models\block\solar_matter_block.json
 3692f8c6902e8c956c59064f8047867171575422 assets\sarilmod\models\block\solar_matter_fence_gate_open.json
@@ -117,8 +118,8 @@ e350d0ad1aee80015c384c769ed38287a082a6d3 assets\sarilmod\models\item\solar_matte
 ef3951d4623fc48f8f08ca1215a4bdf0a093b472 assets\sarilmod\blockstates\solar_matter_lamp.json
 8b5f57cfc71d77c088112ac13d3d9e6986f15c93 assets\sarilmod\models\item\unstable_solar_matter.json
 3672d56e4db12354b7ba4e76d5ca984d7d84d9a4 assets\sarilmod\models\item\solar_matter_lamp.json
-5585a25ca4a84feea25051aed665d63818576f2c assets\sarilmod\models\block\solar_matter_door_top_right_open.json
 38e3ac8f9548188636f679efe1bde6eb6ab17085 assets\sarilmod\models\block\solar_matter_door_top_left_open.json
+5585a25ca4a84feea25051aed665d63818576f2c assets\sarilmod\models\block\solar_matter_door_top_right_open.json
 a1d5df9343a902152da4f0e6af35810284cb470a assets\sarilmod\models\item\solar_matter_helmet_diamond_trim.json
 cdb58c7dc9580b9471ade91e9b7a69beec2b321b assets\sarilmod\models\block\solar_matter_trapdoor_bottom.json
 ddc370a9ae9ccf213daef3c8d81a12354a3b395e assets\sarilmod\models\item\solar_matter.json

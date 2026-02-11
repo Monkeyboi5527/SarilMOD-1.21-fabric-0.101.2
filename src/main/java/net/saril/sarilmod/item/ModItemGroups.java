@@ -47,6 +47,7 @@ public class ModItemGroups {
                         entries.add(ModItems.SOLAR_MATTER_CHESTPLATE);
                         entries.add(ModItems.SOLAR_MATTER_LEGGINGS);
                         entries.add(ModItems.SOLAR_MATTER_BOOTS);
+                        entries.add(ModItems.SOLAR_MATTER_HORSE_ARMOR);
 
 
 

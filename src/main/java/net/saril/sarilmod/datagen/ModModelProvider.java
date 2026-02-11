@@ -67,6 +67,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem) ModItems.SOLAR_MATTER_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.SOLAR_MATTER_BOOTS);
 
+        itemModelGenerator.register(ModItems.SOLAR_MATTER_HORSE_ARMOR, Models.GENERATED);
 
         /*itemModelGenerator.register(
                 ModItems.SOLAR_MATTER_HAMMER,

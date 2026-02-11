@@ -83,6 +83,9 @@ public class ModItems {
                     .maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(15))
                     .rarity(Rarity.EPIC)
                     .fireproof()));
+    public static final Item SOLAR_MATTER_HORSE_ARMOR = registerItem("solar_matter_horse_armor",
+            new AnimalArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, AnimalArmorItem.Type.EQUESTRIAN,
+                    false, new Item.Settings().maxCount(1)));
 
 
 
