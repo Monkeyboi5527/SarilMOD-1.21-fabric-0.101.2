@@ -50,7 +50,7 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.SOLAR_MATTER, Models.GENERATED);
         itemModelGenerator.register(ModItems.UNSTABLE_SOLAR_MATTER, Models.GENERATED);
-        itemModelGenerator.register(ModItems.CHISEL, Models.GENERATED);
+        //itemModelGenerator.register(ModItems.CHISEL, Models.GENERATED);
         itemModelGenerator.register(ModItems.BANANA, Models.GENERATED);
         itemModelGenerator.register(ModItems.DARK_CRYSTAL, Models.GENERATED);
 
