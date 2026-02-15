@@ -62,6 +62,9 @@ public class ModItems {
             new HammerItem(ModToolMaterials.SOLAR_MATTER, new Item.Settings()
                     .attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.SOLAR_MATTER, 7, -3.0f)).rarity(Rarity.EPIC)));
 
+    public static final Item SOLAR_MATTER_BOW = registerItem("solar_matter_bow",
+            new BowItem(new Item.Settings().maxDamage(1000).rarity(Rarity.EPIC)));
+
     public static final Item SOLAR_MATTER_HELMET = registerItem("solar_matter_helmet",
             new ArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()
                     .maxDamage(ArmorItem.Type.HELMET.getMaxDamage(15))

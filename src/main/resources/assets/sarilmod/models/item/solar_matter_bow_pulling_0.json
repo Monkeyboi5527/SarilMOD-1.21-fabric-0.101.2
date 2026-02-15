@@ -1,0 +1,6 @@
+{
+  "parent": "sarilmod:item/solar_matter_bow",
+  "textures": {
+    "layer0": "sarilmod:item/solar_matter_bow_pulling_0"
+  }
+}
