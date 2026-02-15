@@ -66,7 +66,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                 .offerTo(exporter);
 
-
+        offerSmithingTrimRecipe(exporter, ModItems.SKL_SMITHING_TEMPLATE, Identifier.of(SarilMod.MOD_ID, "kaupen"));
 
 
 

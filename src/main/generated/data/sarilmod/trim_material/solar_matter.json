@@ -1,0 +1,9 @@
+{
+  "asset_name": "solar_matter",
+  "description": {
+    "color": "#B03F30",
+    "translate": "trim_material.sarilmod.solar_matter"
+  },
+  "ingredient": "sarilmod:solar_matter",
+  "item_model_index": 0.6
+}

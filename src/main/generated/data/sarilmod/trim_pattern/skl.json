@@ -1,0 +1,8 @@
+{
+  "asset_id": "sarilmod:skl",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.sarilmod.skl"
+  },
+  "template_item": "sarilmod:skl_armor_smithing_template"
+}

@@ -5,6 +5,8 @@ import net.minecraft.item.*;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.resource.featuretoggle.FeatureFlag;
+import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
@@ -86,6 +88,9 @@ public class ModItems {
     public static final Item SOLAR_MATTER_HORSE_ARMOR = registerItem("solar_matter_horse_armor",
             new AnimalArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, AnimalArmorItem.Type.EQUESTRIAN,
                     false, new Item.Settings().maxCount(1)));
+
+    public static final Item SKL_SMITHING_TEMPLATE = registerItem("skl_armor_smithing_template",
+            SmithingTemplateItem.of(Identifier.of(SarilMod.MOD_ID, "skl"), FeatureFlags.VANILLA));
 
 
 

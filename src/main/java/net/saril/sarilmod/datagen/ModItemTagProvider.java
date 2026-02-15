@@ -43,5 +43,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.SOLAR_MATTER_LEGGINGS)
                 .add(ModItems.SOLAR_MATTER_BOOTS);
 
+        getOrCreateTagBuilder(ItemTags.TRIM_MATERIALS)
+                .add(ModItems.SOLAR_MATTER);
+
+        getOrCreateTagBuilder(ItemTags.TRIM_TEMPLATES)
+                .add(ModItems.SKL_SMITHING_TEMPLATE);
+
     }
 }

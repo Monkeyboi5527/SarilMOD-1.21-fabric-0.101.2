@@ -1,4 +1,4 @@
-// 1.21	2026-02-10T19:36:37.9884347	SarilMOD/Model Definitions
+// 1.21	2026-02-14T20:33:13.5443342	SarilMOD/Model Definitions
 c257ee33b83f0d11e9b3ded590cf32d664f6e9e6 assets\sarilmod\blockstates\solar_matter_fence.json
 e20bbd8aa346b511ae3fcb677f85f1bd03068ec7 assets\sarilmod\models\item\solar_matter_fence.json
 28f9ec420e3d7e79d136af6d0cc3a4f33d65476e assets\sarilmod\models\item\solar_matter_leggings.json
@@ -32,6 +32,7 @@ f9a829c0fda4237e05918b3723b2495f33ec378a assets\sarilmod\models\item\solar_matte
 f1e0211b3f18bfab02fdf04c8706b062a4acd651 assets\sarilmod\models\item\solar_matter_leggings_netherite_trim.json
 0b1c6293adf2db9a49821ccdc975e8b6fab72481 assets\sarilmod\models\block\solar_matter_fence_post.json
 dd28fd79523fb371abc3cc2458b37bd772a0d298 assets\sarilmod\models\block\solar_matter_button.json
+24b4b86c551ddcba27cc9ab53cbfe4ac7f72f1d7 assets\sarilmod\models\item\skl_armor_smithing_template.json
 220c2e2c32b2cf0bdfa3b62defde7bb919ea0df6 assets\sarilmod\models\item\solar_matter_helmet_iron_trim.json
 a2a1026c98617bc5104f12021c13511494f45326 assets\sarilmod\models\item\unstable_solar_matter_block.json
 d9d2685d9b2ce834ec9076728def2526efa79d58 assets\sarilmod\blockstates\unstable_solar_matter_block.json
