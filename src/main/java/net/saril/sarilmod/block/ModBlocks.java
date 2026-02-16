@@ -12,6 +12,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.saril.sarilmod.SarilMod;
 import net.saril.sarilmod.block.custom.MagicBlock;
 import net.saril.sarilmod.block.custom.SolarMatterLampBlock;
+import net.saril.sarilmod.sound.ModSounds;
 
 public class ModBlocks {
 
@@ -32,7 +33,7 @@ public class ModBlocks {
                     AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS)));
 
     public static final Block MAGIC_BLOCK = registerBlock("magic_block",
-            new MagicBlock(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK)));
+            new MagicBlock(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK).sounds(ModSounds.MAGIC_BLOCK_SOUNDS)));
 
     public static final Block SOLAR_MATTER_LAMP = registerBlock("solar_matter_lamp",
             new SolarMatterLampBlock(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK).

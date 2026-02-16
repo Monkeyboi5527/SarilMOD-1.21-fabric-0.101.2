@@ -15,6 +15,7 @@ import net.saril.sarilmod.component.ModDataComponentTypes;
 import net.saril.sarilmod.item.ModItemGroups;
 import net.saril.sarilmod.item.ModItems;
 import net.saril.sarilmod.block.ModBlocks;
+import net.saril.sarilmod.sound.ModSounds;
 import net.saril.sarilmod.util.HammerUsageEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,5 +49,6 @@ public class SarilMod implements ModInitializer {
 			return ActionResult.PASS;
 		});
 
+		ModSounds.registerSounds();
 	}
 }

@@ -1,0 +1,38 @@
+{
+  "chisel_use": {
+    "subtitle": "sounds.sarilmod.chisel_use",
+    "sounds": [
+      "sarilmod:chisel_use"
+    ]
+  },
+  "magic_block_break": {
+    "subtitle": "sounds.sarilmod.magic_block_break",
+    "sounds": [
+      "sarilmod:magic_block_break"
+    ]
+  },
+  "magic_block_step": {
+    "subtitle": "sounds.sarilmod.magic_block_step",
+    "sounds": [
+      "sarilmod:magic_block_step"
+    ]
+  },
+  "magic_block_place": {
+    "subtitle": "sounds.sarilmod.magic_block_place",
+    "sounds": [
+      "sarilmod:magic_block_place"
+    ]
+  },
+  "magic_block_hit": {
+    "subtitle": "sounds.sarilmod.magic_block_hit",
+    "sounds": [
+      "sarilmod:magic_block_hit"
+    ]
+  },
+  "magic_block_fall": {
+    "subtitle": "sounds.sarilmod.magic_block_fall",
+    "sounds": [
+      "sarilmod:magic_block_fall"
+    ]
+  }
+}

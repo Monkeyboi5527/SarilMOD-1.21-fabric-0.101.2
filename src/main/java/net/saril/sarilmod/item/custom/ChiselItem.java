@@ -17,6 +17,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
 import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.component.ModDataComponentTypes;
+import net.saril.sarilmod.sound.ModSounds;
 
 import java.util.List;
 import java.util.Map;
@@ -47,7 +48,7 @@ public class ChiselItem extends Item {
                 context.getStack().damage(1, ((ServerWorld) world), ((ServerPlayerEntity) context.getPlayer()),
                         item -> context.getPlayer().sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
 
-                world.playSound(null, context.getBlockPos(), SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.BLOCKS);
+                world.playSound(null, context.getBlockPos(), ModSounds.CHISEL_USE, SoundCategory.BLOCKS);
 
                 context.getStack().set(ModDataComponentTypes.COORDINATES, context.getBlockPos());
             }
