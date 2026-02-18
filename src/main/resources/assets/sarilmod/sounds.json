@@ -34,5 +34,13 @@
     "sounds": [
       "sarilmod:magic_block_fall"
     ]
+  },
+  "fein": {
+    "sounds": [
+      {
+        "name": "sarilmod:fein",
+        "stream": true
+      }
+    ]
   }
 }

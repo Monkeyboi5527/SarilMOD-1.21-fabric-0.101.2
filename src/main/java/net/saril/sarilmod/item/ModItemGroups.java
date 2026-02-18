@@ -50,6 +50,7 @@ public class ModItemGroups {
                         entries.add(ModItems.SOLAR_MATTER_HORSE_ARMOR);
                         entries.add(ModItems.SKL_SMITHING_TEMPLATE);
                         entries.add(ModItems.SOLAR_MATTER_BOW);
+                        entries.add(ModItems.FEIN_MUSIC_DISC);
 
 
 

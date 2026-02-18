@@ -14,6 +14,7 @@ import net.saril.sarilmod.SarilMod;
 import net.saril.sarilmod.item.custom.ChiselItem;
 import net.saril.sarilmod.item.custom.HammerItem;
 import net.saril.sarilmod.item.custom.ModArmorItem;
+import net.saril.sarilmod.sound.ModSounds;
 
 import java.util.List;
 
@@ -94,6 +95,9 @@ public class ModItems {
 
     public static final Item SKL_SMITHING_TEMPLATE = registerItem("skl_armor_smithing_template",
             SmithingTemplateItem.of(Identifier.of(SarilMod.MOD_ID, "skl"), FeatureFlags.VANILLA));
+
+    public static final Item FEIN_MUSIC_DISC = registerItem("fein_music_disc",
+            new Item(new Item.Settings().maxCount(1).rarity(Rarity.EPIC).jukeboxPlayable(ModSounds.FEIN_KEY)));
 
 
 
