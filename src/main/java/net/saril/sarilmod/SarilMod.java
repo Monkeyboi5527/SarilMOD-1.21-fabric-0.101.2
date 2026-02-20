@@ -12,6 +12,7 @@ import net.minecraft.item.Items;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.saril.sarilmod.component.ModDataComponentTypes;
+import net.saril.sarilmod.effect.ModEffects;
 import net.saril.sarilmod.item.ModItemGroups;
 import net.saril.sarilmod.item.ModItems;
 import net.saril.sarilmod.block.ModBlocks;
@@ -50,5 +51,6 @@ public class SarilMod implements ModInitializer {
 		});
 
 		ModSounds.registerSounds();
+		ModEffects.registerEffects();
 	}
 }
