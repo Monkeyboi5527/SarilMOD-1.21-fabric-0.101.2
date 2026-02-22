@@ -4,11 +4,13 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.item.Items;
+import net.minecraft.potion.Potions;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.saril.sarilmod.component.ModDataComponentTypes;
@@ -16,6 +18,7 @@ import net.saril.sarilmod.effect.ModEffects;
 import net.saril.sarilmod.item.ModItemGroups;
 import net.saril.sarilmod.item.ModItems;
 import net.saril.sarilmod.block.ModBlocks;
+import net.saril.sarilmod.potion.ModPotions;
 import net.saril.sarilmod.sound.ModSounds;
 import net.saril.sarilmod.util.HammerUsageEvent;
 import org.slf4j.Logger;
@@ -52,5 +55,9 @@ public class SarilMod implements ModInitializer {
 
 		ModSounds.registerSounds();
 		ModEffects.registerEffects();
+		ModPotions.registerPotions();
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+			builder.registerPotionRecipe(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION);
+		});
 	}
 }

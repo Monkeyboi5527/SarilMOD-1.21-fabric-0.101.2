@@ -45,6 +45,10 @@
   "block.sarilmod.solar_matter_slab": "Solar Matter Slab",
 
   "effect.sarilmod.slimey": "Slimey",
+  "item.minecraft.potion.effect.slimey_potion": "Slimey Potion",
+  "item.minecraft.splash_potion.effect.slimey_potion": "Slimey Splash Potion",
+  "item.minecraft.lingering_potion.effect.slimey_potion": "Slimey Lingering Potion",
+
 
   "itemgroup.sarilmod.sarilmod": "SarilMOD"
 }
