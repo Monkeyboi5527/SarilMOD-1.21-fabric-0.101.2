@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 300,
+  "experience": 0.5,
+  "group": "solar_matter_from_blasting",
+  "ingredient": "sarilmod:unstable_solar_matter",
+  "result": {
+    "id": "sarilmod:unstable_solar_matter"
+  }
+}

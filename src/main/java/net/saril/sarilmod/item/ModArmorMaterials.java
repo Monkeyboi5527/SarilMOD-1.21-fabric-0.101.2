@@ -19,6 +19,6 @@ public class ModArmorMaterials {
         map.put(EquipmentType.HELMET, 2);
         map.put(EquipmentType.BODY, 4);
     }), 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND,0,0, ModTags.Items.SOLAR_MATTER_REPAIR,
-            Identifier.of(SarilMod.MOD_ID, "solar_Matter"));
+            Identifier.of(SarilMod.MOD_ID, "solar_matter"));
 
 }

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "sarilmod:block/solar_matter_block"
+    }
+  }
+}

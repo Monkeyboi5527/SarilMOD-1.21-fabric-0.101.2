@@ -113,13 +113,13 @@ public class ModItems {
                     .rarity(Rarity.EPIC)
                     .fireproof()));
 
-    public static final Item SOLAR_MATTER_HORSE_ARMOR = registerItem("pink_garnet_horse_armor",
+    public static final Item SOLAR_MATTER_HORSE_ARMOR = registerItem("solar_matter_horse_armor",
             new AnimalArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, AnimalArmorItem.Type.EQUESTRIAN, new Item.Settings()
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SarilMod.MOD_ID, "solar_matter_horse_armor"))).maxCount(1)));
 
     public static final Item SKL_SMITHING_TEMPLATE = registerItem("skl_armor_smithing_template",
             SmithingTemplateItem.of( new Item.Settings() .registryKey(RegistryKey.of(RegistryKeys.ITEM,
-                    Identifier.of(SarilMod.MOD_ID, "solar_matter_boots")))));
+                    Identifier.of(SarilMod.MOD_ID, "skl_armor_smithing_template")))));
 
     public static final Item FEIN_MUSIC_DISC = registerItem("fein_music_disc",
             new Item(new Item.Settings()
@@ -127,7 +127,7 @@ public class ModItems {
                     .rarity(Rarity.EPIC)
                     .jukeboxPlayable(ModSounds.FEIN_KEY)
                     .registryKey(RegistryKey.of(RegistryKeys.ITEM,
-                            Identifier.of(SarilMod.MOD_ID, "solar_matter_boots")))));
+                            Identifier.of(SarilMod.MOD_ID, "fein_music_disc")))));
 
 
 
