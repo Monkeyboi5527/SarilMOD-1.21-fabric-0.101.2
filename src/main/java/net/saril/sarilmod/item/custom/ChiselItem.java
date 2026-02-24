@@ -23,11 +23,6 @@ import java.util.List;
 import java.util.Map;
 
 public class ChiselItem extends Item {
-
-    public ChiselItem(Settings settings) {
-        super(settings);
-    }
-
     private static final Map<Block, Block> CHISEL_MAP =
             Map.of(
                     Blocks.STONE, Blocks.STONE_BRICKS,
@@ -35,6 +30,10 @@ public class ChiselItem extends Item {
                     Blocks.OAK_LOG, ModBlocks.SOLAR_MATTER_BLOCK,
                     Blocks.GOLD_BLOCK, Blocks.NETHERITE_BLOCK
             );
+
+    public ChiselItem(Settings settings) {
+        super(settings);
+    }
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
@@ -46,27 +45,32 @@ public class ChiselItem extends Item {
                 world.setBlockState(context.getBlockPos(), CHISEL_MAP.get(clickedBlock).getDefaultState());
 
                 context.getStack().damage(1, ((ServerWorld) world), ((ServerPlayerEntity) context.getPlayer()),
-                        item -> context.getPlayer().sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
+                        item -> {
+                            assert context.getPlayer() != null;
+                            context.getPlayer().sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND);
+                        });
 
                 world.playSound(null, context.getBlockPos(), ModSounds.CHISEL_USE, SoundCategory.BLOCKS);
 
                 context.getStack().set(ModDataComponentTypes.COORDINATES, context.getBlockPos());
             }
         }
+
         return ActionResult.SUCCESS;
     }
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        if (Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("tooltip.sarilmod.chisel.tooltip.shift_down"));
+        if(Screen.hasShiftDown()) {
+            tooltip.add(Text.translatable("tooltip.sarilmod.chisel.shift_down"));
         } else {
-            tooltip.add(Text.translatable("tooltip.sarilmod.chisel.tooltip"));
+            tooltip.add(Text.translatable("tooltip.sarilmod.chisel"));
         }
 
         if(stack.get(ModDataComponentTypes.COORDINATES) != null) {
             tooltip.add(Text.literal("Last Block Changed at " + stack.get(ModDataComponentTypes.COORDINATES)));
         }
+
         super.appendTooltip(stack, context, tooltip, type);
     }
 }

@@ -7,6 +7,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.saril.sarilmod.SarilMod;
@@ -14,12 +16,15 @@ import net.saril.sarilmod.block.custom.MagicBlock;
 import net.saril.sarilmod.block.custom.SolarMatterLampBlock;
 import net.saril.sarilmod.sound.ModSounds;
 
+import static net.minecraft.command.argument.RegistryKeyArgumentType.registryKey;
+
 public class ModBlocks {
 
 
 
     public static final Block SOLAR_MATTER_BLOCK = registerBlock("solar_matter_block",
-        new Block(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK)));
+        new Block(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK).
+                registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(SarilMod.MOD_ID, "solar_matter_block")))));
 
     public static final Block UNSTABLE_SOLAR_MATTER_BLOCK = registerBlock("unstable_solar_matter_block",
             new Block(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK)));
@@ -106,7 +111,8 @@ public class ModBlocks {
 
     private static void registerBlockItem(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(SarilMod.MOD_ID, name),
-                new BlockItem(block, new Item.Settings()));
+                new BlockItem(block, new Item.Settings()
+                        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(SarilMod.MOD_ID, name)))));
     }
 
     public static void registerModBlocks() {

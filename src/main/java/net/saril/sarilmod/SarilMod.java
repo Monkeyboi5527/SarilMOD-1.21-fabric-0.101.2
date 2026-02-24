@@ -5,7 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.SheepEntity;
@@ -37,12 +37,15 @@ public class SarilMod implements ModInitializer {
 		ModDataComponentTypes.registerDataComponentTypes();
 		PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
 
-		FuelRegistry.INSTANCE.add(ModItems.DARK_CRYSTAL, 20000);
+
+		FuelRegistryEvents.BUILD.register((builder, context) -> {
+			builder.add(ModItems.DARK_CRYSTAL, 20);
+		});
 
 		AttackEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
 			if(entity instanceof SheepEntity sheepEntity && world.isClient) {
 				if(player.getMainHandStack().getItem() == Items.END_ROD) {
-					player.sendMessage(Text.literal("ayo? sussy baka"));
+					player.sendMessage(Text.literal("ayo? sussy baka"), true);
 					player.getMainHandStack().decrement(1);
 					sheepEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, 20, 255));
 				}

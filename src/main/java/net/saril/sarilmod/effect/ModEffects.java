@@ -14,7 +14,7 @@ public class ModEffects {
 
     public static final RegistryEntry<StatusEffect> SLIMEY = registerStatusEffect("slimey",
             new SlimeyEffect(StatusEffectCategory.NEUTRAL, 0x36ebab)
-                    .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED,
+                    .addAttributeModifier(EntityAttributes.MOVEMENT_SPEED,
                             Identifier.of(SarilMod.MOD_ID, "slimy"), -0.25f,
                             EntityAttributeModifier.Operation.ADD_MULTIPLIED_TOTAL));
 

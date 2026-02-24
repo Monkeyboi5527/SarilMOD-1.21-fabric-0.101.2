@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "sarilmod:item/skl_armor_smithing_template"
-  }
-}

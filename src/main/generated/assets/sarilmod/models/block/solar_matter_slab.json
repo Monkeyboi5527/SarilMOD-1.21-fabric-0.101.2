@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "sarilmod:block/solar_matter_block",
-    "side": "sarilmod:block/solar_matter_block",
-    "top": "sarilmod:block/solar_matter_block"
-  }
-}

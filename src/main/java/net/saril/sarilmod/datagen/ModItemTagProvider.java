@@ -49,5 +49,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.TRIM_TEMPLATES)
                 .add(ModItems.SKL_SMITHING_TEMPLATE);
 
+        getOrCreateTagBuilder(ModTags.Items.SOLAR_MATTER_REPAIR)
+                .add(ModItems.SOLAR_MATTER);
+
     }
 }

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "sarilmod:block/unstable_solar_matter_ore"
-  }
-}

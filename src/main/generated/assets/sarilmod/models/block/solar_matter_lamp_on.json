@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "sarilmod:block/solar_matter_lamp_on"
-  }
-}
