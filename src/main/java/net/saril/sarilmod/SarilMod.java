@@ -15,6 +15,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.saril.sarilmod.component.ModDataComponentTypes;
 import net.saril.sarilmod.effect.ModEffects;
+import net.saril.sarilmod.enchantment.ModEnchantmentEffects;
+import net.saril.sarilmod.enchantment.ModEnchantments;
 import net.saril.sarilmod.item.ModItemGroups;
 import net.saril.sarilmod.item.ModItems;
 import net.saril.sarilmod.block.ModBlocks;
@@ -59,5 +61,6 @@ public class SarilMod implements ModInitializer {
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION);
 		});
+		ModEnchantmentEffects.registerEnchantmentEffects();
 	}
 }
