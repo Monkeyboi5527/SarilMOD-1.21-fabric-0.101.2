@@ -7,10 +7,13 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.saril.sarilmod.SarilMod;
 import net.saril.sarilmod.enchantment.custom.LightningStrikerEnchantmentEffect;
+import net.saril.sarilmod.enchantment.custom.TestEnchantmentEffect;
 
 public class ModEnchantmentEffects {
     public static final MapCodec<? extends EnchantmentEntityEffect> LIGHTNING_STRIKER =
             registerEntityEffect("lightning_striker", LightningStrikerEnchantmentEffect.CODEC);
+    public static final MapCodec<? extends EnchantmentEntityEffect> TEST =
+            registerEntityEffect("test", TestEnchantmentEffect.CODEC);
 
 
     private static MapCodec<? extends EnchantmentEntityEffect> registerEntityEffect(String name,

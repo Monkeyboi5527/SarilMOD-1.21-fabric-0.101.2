@@ -1,6 +1,7 @@
 {
   "replaces": false,
   "values": [
-    "sarilmod:lightning_striker"
+    "sarilmod:lightning_striker",
+    "sarilmod:test"
   ]
 }
