@@ -51,6 +51,7 @@ public class ModItemGroups {
                         entries.add(ModItems.SKL_SMITHING_TEMPLATE);
                         entries.add(ModItems.SOLAR_MATTER_BOW);
                         entries.add(ModItems.FEIN_MUSIC_DISC);
+                        entries.add(ModItems.CAULIFLOWER_SEEDS);
 
 
 

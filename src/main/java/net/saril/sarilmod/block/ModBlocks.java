@@ -2,14 +2,18 @@ package net.saril.sarilmod.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.saril.sarilmod.SarilMod;
+import net.saril.sarilmod.block.custom.CauliflowerCropBlock;
 import net.saril.sarilmod.block.custom.MagicBlock;
 import net.saril.sarilmod.block.custom.SolarMatterLampBlock;
 import net.saril.sarilmod.sound.ModSounds;
@@ -71,6 +75,11 @@ public class ModBlocks {
     public static final Block SOLAR_MATTER_TRAPDOOR = registerBlock("solar_matter_trapdoor",
             new TrapdoorBlock(BlockSetType.IRON, AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK).nonOpaque()));
 
+    public static final Block CAULIFLOWER_CROP = registerBlockWithoutBlockItem("cauliflower_crop",
+            new CauliflowerCropBlock(AbstractBlock.Settings.create()
+                    .noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP)
+                    .pistonBehavior(PistonBehavior.DESTROY).mapColor(DyeColor.CYAN)));
+
 
 
     /*
@@ -97,7 +106,9 @@ public class ModBlocks {
 
 
 
-
+    private static Block registerBlockWithoutBlockItem(String name, Block block) {
+        return Registry.register(Registries.BLOCK, Identifier.of(SarilMod.MOD_ID, name), block);
+    }
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

@@ -9,6 +9,7 @@
   "item.sarilmod.dark_crystal": "Dark Crystal",
   "item.sarilmod.fein_music_disc": "FEIN! Music Disc",
   "item.sarilmod.fein_music_disc.desc": "FEIN! - Travis Scott feat. Playboi Carti",
+  "item.sarilmod.cauliflower_seeds": "Cauliflower Seeds that turn into bananas for some reason",
 
   "item.sarilmod.solar_matter_sword": "Solar Matter Sword",
   "item.sarilmod.solar_matter_pickaxe": "Solar Matter Pickaxe",
@@ -47,6 +48,8 @@
   "block.sarilmod.solar_matter_trapdoor": "Solar Matter Trapdoor",
   "block.sarilmod.solar_matter_wall": "Solar Matter Wall",
   "block.sarilmod.solar_matter_slab": "Solar Matter Slab",
+
+  "block.sarilmod.cauliflower_crop": "Cauliflower Crop",
 
   "effect.sarilmod.slimey": "Slimey",
   "item.minecraft.potion.effect.slimey_potion": "Slimey Potion",

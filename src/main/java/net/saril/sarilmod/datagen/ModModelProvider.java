@@ -6,6 +6,7 @@ import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
 import net.saril.sarilmod.block.ModBlocks;
+import net.saril.sarilmod.block.custom.CauliflowerCropBlock;
 import net.saril.sarilmod.block.custom.SolarMatterLampBlock;
 import net.saril.sarilmod.item.ModItems;
 
@@ -40,6 +41,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.SOLAR_MATTER_LAMP)
                 .coordinate(BlockStateModelGenerator.createBooleanModelMap(SolarMatterLampBlock.CLICKED, lampOnIdentifier, lampOffIdentifier)));
 
+        blockStateModelGenerator.registerCrop(ModBlocks.CAULIFLOWER_CROP, CauliflowerCropBlock.AGE, 0, 1, 2, 3, 4, 5, 6);
 
         
 

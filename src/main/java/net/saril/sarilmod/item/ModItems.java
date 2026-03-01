@@ -11,6 +11,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.saril.sarilmod.SarilMod;
+import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.item.custom.ChiselItem;
 import net.saril.sarilmod.item.custom.HammerItem;
 import net.saril.sarilmod.item.custom.ModArmorItem;
@@ -98,6 +99,9 @@ public class ModItems {
 
     public static final Item FEIN_MUSIC_DISC = registerItem("fein_music_disc",
             new Item(new Item.Settings().maxCount(1).rarity(Rarity.EPIC).jukeboxPlayable(ModSounds.FEIN_KEY)));
+
+    public static final Item CAULIFLOWER_SEEDS = registerItem("cauliflower_seeds",
+            new AliasedBlockItem(ModBlocks.CAULIFLOWER_CROP, new Item.Settings()));
 
 
 

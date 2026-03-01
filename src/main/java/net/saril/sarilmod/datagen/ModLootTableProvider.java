@@ -7,14 +7,17 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LeafEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.saril.sarilmod.block.ModBlocks;
+import net.saril.sarilmod.block.custom.CauliflowerCropBlock;
 import net.saril.sarilmod.item.ModItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -46,6 +49,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.UNSTABLE_SOLAR_MATTER_ORE, oreDrops(ModBlocks.UNSTABLE_SOLAR_MATTER_ORE, ModItems.UNSTABLE_SOLAR_MATTER));
         addDrop(ModBlocks.DEEPSLATE_UNSTABLE_SOLAR_MATTER_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_UNSTABLE_SOLAR_MATTER_ORE, ModItems.UNSTABLE_SOLAR_MATTER, 1, 3));
+
+        BlockStatePropertyLootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.CAULIFLOWER_CROP)
+                .properties(StatePredicate.Builder.create().exactMatch(CauliflowerCropBlock.AGE, CauliflowerCropBlock.MAX_AGE));
+        this.addDrop(ModBlocks.CAULIFLOWER_CROP, this.cropDrops(ModBlocks.CAULIFLOWER_CROP, ModItems.BANANA, ModItems.CAULIFLOWER_SEEDS, builder2));
     }
 
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {
