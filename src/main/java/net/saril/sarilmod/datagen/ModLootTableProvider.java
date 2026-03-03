@@ -3,9 +3,13 @@ package net.saril.sarilmod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
@@ -17,6 +21,7 @@ import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.saril.sarilmod.block.ModBlocks;
+import net.saril.sarilmod.block.custom.BananaBushBlock;
 import net.saril.sarilmod.block.custom.CauliflowerCropBlock;
 import net.saril.sarilmod.item.ModItems;
 
@@ -29,6 +34,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
+        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
         addDrop(ModBlocks.SOLAR_MATTER_BLOCK);
         addDrop(ModBlocks.UNSTABLE_SOLAR_MATTER_BLOCK);
         addDrop(ModBlocks.MAGIC_BLOCK);
@@ -53,6 +59,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         BlockStatePropertyLootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.CAULIFLOWER_CROP)
                 .properties(StatePredicate.Builder.create().exactMatch(CauliflowerCropBlock.AGE, CauliflowerCropBlock.MAX_AGE));
         this.addDrop(ModBlocks.CAULIFLOWER_CROP, this.cropDrops(ModBlocks.CAULIFLOWER_CROP, ModItems.BANANA, ModItems.CAULIFLOWER_SEEDS, builder2));
+
+        this.addDrop(ModBlocks.BANANA_BUSH_BLOCK, (block) -> (LootTable.Builder)this.applyExplosionDecay(block, LootTable.builder().pool(LootPool.builder().conditionally(BlockStatePropertyLootCondition.builder(ModBlocks.BANANA_BUSH_BLOCK).properties(StatePredicate.Builder.create().exactMatch(BananaBushBlock.AGE, 3))).with(ItemEntry.builder(ModItems.BANANA)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 3.0F))).apply(ApplyBonusLootFunction.uniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE)))).pool(LootPool.builder().conditionally(BlockStatePropertyLootCondition.builder(ModBlocks.BANANA_BUSH_BLOCK).properties(StatePredicate.Builder.create().exactMatch(SweetBerryBushBlock.AGE, 2))).with(ItemEntry.builder(ModItems.BANANA)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 2.0F))).apply(ApplyBonusLootFunction.uniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE))))));
+
     }
 
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {

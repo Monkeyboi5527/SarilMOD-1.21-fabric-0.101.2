@@ -1,5 +1,6 @@
-// 1.21	2026-03-01T14:52:55.4545399	SarilMOD/Block Loot Tables
+// 1.21	2026-03-02T21:17:22.703953	SarilMOD/Block Loot Tables
 1bfcfd7efc0689317f5418b433a977376a31d62e data\sarilmod\loot_table\blocks\deepslate_unstable_solar_matter_ore.json
+8c9affab690b105d955e7eaae4b6bc7b87d1201b data\sarilmod\loot_table\blocks\banana_bush.json
 7bce53290695167a0cb4e6426c29ca20a72c63fa data\sarilmod\loot_table\blocks\solar_matter_trapdoor.json
 fc818e095f24bd48081d29c1bf3133f48ea4285a data\sarilmod\loot_table\blocks\solar_matter_block.json
 adb730fa9d101259d3d0d1a781d4284fe7870ff1 data\sarilmod\loot_table\blocks\solar_matter_slab.json

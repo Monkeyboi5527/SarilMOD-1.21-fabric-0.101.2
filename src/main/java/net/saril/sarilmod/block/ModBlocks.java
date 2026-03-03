@@ -13,6 +13,7 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.saril.sarilmod.SarilMod;
+import net.saril.sarilmod.block.custom.BananaBushBlock;
 import net.saril.sarilmod.block.custom.CauliflowerCropBlock;
 import net.saril.sarilmod.block.custom.MagicBlock;
 import net.saril.sarilmod.block.custom.SolarMatterLampBlock;
@@ -79,6 +80,9 @@ public class ModBlocks {
             new CauliflowerCropBlock(AbstractBlock.Settings.create()
                     .noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CROP)
                     .pistonBehavior(PistonBehavior.DESTROY).mapColor(DyeColor.CYAN)));
+
+    public static final Block BANANA_BUSH_BLOCK = registerBlockWithoutBlockItem("banana_bush",
+            new BananaBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)));
 
 
 

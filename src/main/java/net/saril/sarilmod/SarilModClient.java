@@ -13,6 +13,7 @@ public class SarilModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SOLAR_MATTER_TRAPDOOR, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CAULIFLOWER_CROP, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BANANA_BUSH_BLOCK, RenderLayer.getCutout());
 
         ModModelPredicates.registerModelPredicates();
     }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "sarilmod:block/banana_bush_stage3"
+  }
+}

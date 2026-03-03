@@ -6,6 +6,7 @@ import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
 import net.saril.sarilmod.block.ModBlocks;
+import net.saril.sarilmod.block.custom.BananaBushBlock;
 import net.saril.sarilmod.block.custom.CauliflowerCropBlock;
 import net.saril.sarilmod.block.custom.SolarMatterLampBlock;
 import net.saril.sarilmod.item.ModItems;
@@ -43,6 +44,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerCrop(ModBlocks.CAULIFLOWER_CROP, CauliflowerCropBlock.AGE, 0, 1, 2, 3, 4, 5, 6);
 
+        blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.BANANA_BUSH_BLOCK, BlockStateModelGenerator.TintType.NOT_TINTED,
+                BananaBushBlock.AGE, 0, 1, 2, 3);
+
         
 
     }
@@ -53,7 +57,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SOLAR_MATTER, Models.GENERATED);
         itemModelGenerator.register(ModItems.UNSTABLE_SOLAR_MATTER, Models.GENERATED);
         //itemModelGenerator.register(ModItems.CHISEL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.BANANA, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.BANANA, Models.GENERATED);
         itemModelGenerator.register(ModItems.DARK_CRYSTAL, Models.GENERATED);
 
 
