@@ -8,6 +8,8 @@ import net.saril.sarilmod.datagen.*;
 import net.saril.sarilmod.enchantment.ModEnchantments;
 import net.saril.sarilmod.trim.ModTrimMaterials;
 import net.saril.sarilmod.trim.ModTrimPatterns;
+import net.saril.sarilmod.world.ModConfiguredFeatures;
+import net.saril.sarilmod.world.ModPlacedFeatures;
 
 public class SarilModDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -27,5 +29,8 @@ public class SarilModDataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.addRegistry(RegistryKeys.TRIM_MATERIAL, ModTrimMaterials::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.TRIM_PATTERN, ModTrimPatterns::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.ENCHANTMENT, ModEnchantments::bootstrap);
+
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
 	}
 }

@@ -23,6 +23,7 @@ import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.potion.ModPotions;
 import net.saril.sarilmod.sound.ModSounds;
 import net.saril.sarilmod.util.HammerUsageEvent;
+import net.saril.sarilmod.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -64,5 +65,7 @@ public class SarilMod implements ModInitializer {
 		ModEnchantmentEffects.registerEnchantmentEffects();
 		CompostingChanceRegistry.INSTANCE.add(ModItems.BANANA, 200f);
 		CompostingChanceRegistry.INSTANCE.add(ModItems.CAULIFLOWER_SEEDS, 0.5f);
+
+		ModWorldGeneration.generateModWorldGen();
 	}
 }
