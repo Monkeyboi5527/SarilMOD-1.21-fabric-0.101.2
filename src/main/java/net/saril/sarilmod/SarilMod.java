@@ -69,6 +69,6 @@ public class SarilMod implements ModInitializer {
 		StrippableBlockRegistry.register(ModBlocks.STELLAR_LOG, ModBlocks.STRIPPED_STELLAR_LOG);
 		StrippableBlockRegistry.register(ModBlocks.STELLAR_WOOD, ModBlocks.STRIPPED_STELLAR_WOOD);
 
-		//FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STELLAR_LOG, 3, 3);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STELLAR_LEAVES, 20, 40);
 	}
 }
