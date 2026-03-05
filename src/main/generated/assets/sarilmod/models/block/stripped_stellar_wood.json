@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "sarilmod:block/stripped_stellar_log",
+    "side": "sarilmod:block/stripped_stellar_log"
+  }
+}

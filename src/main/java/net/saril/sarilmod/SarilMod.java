@@ -4,9 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
-import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
-import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.SheepEntity;
@@ -67,5 +65,10 @@ public class SarilMod implements ModInitializer {
 		CompostingChanceRegistry.INSTANCE.add(ModItems.CAULIFLOWER_SEEDS, 0.5f);
 
 		ModWorldGeneration.generateModWorldGen();
+
+		StrippableBlockRegistry.register(ModBlocks.STELLAR_LOG, ModBlocks.STRIPPED_STELLAR_LOG);
+		StrippableBlockRegistry.register(ModBlocks.STELLAR_WOOD, ModBlocks.STRIPPED_STELLAR_WOOD);
+
+		//FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STELLAR_LOG, 3, 3);
 	}
 }

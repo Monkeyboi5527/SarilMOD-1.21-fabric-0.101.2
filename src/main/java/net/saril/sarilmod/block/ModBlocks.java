@@ -18,6 +18,7 @@ import net.saril.sarilmod.block.custom.CauliflowerCropBlock;
 import net.saril.sarilmod.block.custom.MagicBlock;
 import net.saril.sarilmod.block.custom.SolarMatterLampBlock;
 import net.saril.sarilmod.sound.ModSounds;
+import net.saril.sarilmod.world.tree.ModSaplingGenerators;
 
 public class ModBlocks {
 
@@ -91,6 +92,27 @@ public class ModBlocks {
 
     public static final Block BANANA_BUSH_BLOCK = registerBlockWithoutBlockItem("banana_bush",
             new BananaBushBlock(AbstractBlock.Settings.copy(Blocks.SWEET_BERRY_BUSH)));
+
+    public static final Block STELLAR_LOG = registerBlock("stellar_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG)));
+
+    public static final Block STELLAR_WOOD = registerBlock("stellar_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD)));
+
+    public static final Block STRIPPED_STELLAR_LOG = registerBlock("stripped_stellar_log",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG)));
+
+    public static final Block STRIPPED_STELLAR_WOOD = registerBlock("stripped_stellar_wood",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
+
+    public static final Block STELLAR_PLANKS = registerBlock("stellar_planks",
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)));
+
+    public static final Block STELLAR_LEAVES = registerBlock("stellar_leaves",
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+
+    public static final Block STELLAR_SAPLING = registerBlock("stellar_sapling",
+            new SaplingBlock(ModSaplingGenerators.STELLAR,AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
 
 
 

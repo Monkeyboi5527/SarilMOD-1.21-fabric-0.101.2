@@ -49,7 +49,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.BANANA_BUSH_BLOCK, BlockStateModelGenerator.TintType.NOT_TINTED,
                 BananaBushBlock.AGE, 0, 1, 2, 3);
 
-        
+
+        blockStateModelGenerator.registerLog(ModBlocks.STELLAR_LOG).log(ModBlocks.STELLAR_LOG).wood(ModBlocks.STELLAR_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_STELLAR_LOG).log(ModBlocks.STRIPPED_STELLAR_LOG).wood(ModBlocks.STRIPPED_STELLAR_WOOD);
+
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.STELLAR_PLANKS);
+        blockStateModelGenerator.registerSingleton(ModBlocks.STELLAR_LEAVES, TexturedModel.LEAVES);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.STELLAR_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
     }
 
@@ -79,6 +85,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SKL_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.FEIN_MUSIC_DISC, Models.GENERATED);
 
+        itemModelGenerator.register(ModBlocks.STELLAR_SAPLING.asItem(),  Models.GENERATED);
         //itemModelGenerator.register(ModItems.SOLAR_MATTER_HAMMER,new Model(Optional.of(id("item/solar_matter_hammer")), Optional.empty()));
 
 

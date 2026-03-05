@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "sarilmod:block/stripped_stellar_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "sarilmod:block/stripped_stellar_wood"
+    },
+    "axis=z": {
+      "model": "sarilmod:block/stripped_stellar_wood",
+      "x": 90
+    }
+  }
+}

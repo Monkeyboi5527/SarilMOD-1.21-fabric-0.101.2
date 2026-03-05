@@ -53,7 +53,14 @@ public class ModItemGroups {
                         entries.add(ModItems.SKL_SMITHING_TEMPLATE);
                         entries.add(ModItems.SOLAR_MATTER_BOW);
                         entries.add(ModItems.FEIN_MUSIC_DISC);
-                        entries.add(ModItems.CAULIFLOWER_SEEDS);
+                        entries.add(ModBlocks.STELLAR_LOG);
+                        entries.add(ModBlocks.STRIPPED_STELLAR_LOG);
+                        entries.add(ModBlocks.STELLAR_WOOD);
+                        entries.add(ModBlocks.STRIPPED_STELLAR_WOOD);
+                        entries.add(ModBlocks.STELLAR_PLANKS);
+                        entries.add(ModBlocks.STELLAR_LEAVES);
+                        entries.add(ModBlocks.STELLAR_SAPLING);
+
 
 
 

@@ -38,5 +38,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MAGIC_BLOCK)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
 
+        getOrCreateTagBuilder(BlockTags.LOGS)
+                .add(ModBlocks.STELLAR_LOG)
+                .add(ModBlocks.STELLAR_WOOD)
+                .add(ModBlocks.STRIPPED_STELLAR_LOG)
+                .add(ModBlocks.STRIPPED_STELLAR_WOOD);
     }
 }

@@ -50,6 +50,13 @@
   "block.sarilmod.solar_matter_trapdoor": "Solar Matter Trapdoor",
   "block.sarilmod.solar_matter_wall": "Solar Matter Wall",
   "block.sarilmod.solar_matter_slab": "Solar Matter Slab",
+  "block.sarilmod.stellar_log": "Stellar Log",
+  "block.sarilmod.stellar_wood": "Stellar Wood",
+  "block.sarilmod.stripped_stellar_log": "Stripped Stellar Log",
+  "block.sarilmod.stripped_stellar_wood": "Stripped Stellar Wood",
+  "block.sarilmod.stellar_planks": "Stellar Planks",
+  "block.sarilmod.stellar_leaves": "Stellar Leaves",
+  "block.sarilmod.stellar_sapling": "Stellar Sapling",
 
   "block.sarilmod.cauliflower_crop": "Cauliflower Crop",
   "block.sarilmod.banana_bush": "Banana Bush",

@@ -64,6 +64,15 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         this.addDrop(ModBlocks.BANANA_BUSH_BLOCK, (block) -> (LootTable.Builder)this.applyExplosionDecay(block, LootTable.builder().pool(LootPool.builder().conditionally(BlockStatePropertyLootCondition.builder(ModBlocks.BANANA_BUSH_BLOCK).properties(StatePredicate.Builder.create().exactMatch(BananaBushBlock.AGE, 3))).with(ItemEntry.builder(ModItems.BANANA)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 3.0F))).apply(ApplyBonusLootFunction.uniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE)))).pool(LootPool.builder().conditionally(BlockStatePropertyLootCondition.builder(ModBlocks.BANANA_BUSH_BLOCK).properties(StatePredicate.Builder.create().exactMatch(SweetBerryBushBlock.AGE, 2))).with(ItemEntry.builder(ModItems.BANANA)).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 2.0F))).apply(ApplyBonusLootFunction.uniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE))))));
 
+
+        addDrop(ModBlocks.STELLAR_LOG);
+        addDrop(ModBlocks.STELLAR_WOOD);
+        addDrop(ModBlocks.STRIPPED_STELLAR_LOG);
+        addDrop(ModBlocks.STRIPPED_STELLAR_WOOD);
+        addDrop(ModBlocks.STELLAR_PLANKS);
+        addDrop(ModBlocks.STELLAR_SAPLING);
+
+        addDrop(ModBlocks.STELLAR_LEAVES, leavesDrops(ModBlocks.STELLAR_LEAVES, ModBlocks.STELLAR_SAPLING, 0.0625f));
     }
 
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {

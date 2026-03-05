@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
+import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.item.ModItems;
 import net.saril.sarilmod.util.ModTags;
 
@@ -49,5 +50,14 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.TRIM_TEMPLATES)
                 .add(ModItems.SKL_SMITHING_TEMPLATE);
 
+        getOrCreateTagBuilder(ItemTags.LOGS)
+                .add(ModBlocks.STELLAR_LOG.asItem())
+                .add(ModBlocks.STELLAR_WOOD.asItem())
+                .add(ModBlocks.STRIPPED_STELLAR_LOG.asItem())
+                .add(ModBlocks.STRIPPED_STELLAR_WOOD.asItem());
+
+
+        getOrCreateTagBuilder(ItemTags.PLANKS)
+                .add(ModBlocks.STELLAR_PLANKS.asItem());
     }
 }
