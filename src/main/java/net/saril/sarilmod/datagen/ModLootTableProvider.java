@@ -55,6 +55,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.UNSTABLE_SOLAR_MATTER_ORE, oreDrops(ModBlocks.UNSTABLE_SOLAR_MATTER_ORE, ModItems.UNSTABLE_SOLAR_MATTER));
         addDrop(ModBlocks.DEEPSLATE_UNSTABLE_SOLAR_MATTER_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_UNSTABLE_SOLAR_MATTER_ORE, ModItems.UNSTABLE_SOLAR_MATTER, 1, 3));
+        addDrop(ModBlocks.UNSTABLE_SOLAR_MATTER_NETHER_ORE, multipleOreDrops(ModBlocks.UNSTABLE_SOLAR_MATTER_NETHER_ORE, ModItems.UNSTABLE_SOLAR_MATTER, 2, 4));
+        addDrop(ModBlocks.UNSTABLE_SOLAR_MATTER_END_ORE, multipleOreDrops(ModBlocks.UNSTABLE_SOLAR_MATTER_END_ORE, ModItems.UNSTABLE_SOLAR_MATTER, 2, 4));
 
         BlockStatePropertyLootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.CAULIFLOWER_CROP)
                 .properties(StatePredicate.Builder.create().exactMatch(CauliflowerCropBlock.AGE, CauliflowerCropBlock.MAX_AGE));

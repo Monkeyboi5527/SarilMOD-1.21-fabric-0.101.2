@@ -31,6 +31,8 @@
   "block.sarilmod.solar_matter_block": "Solar Matter Block",
   "block.sarilmod.unstable_solar_matter_block": "Unstable Solar Matter Block",
   "block.sarilmod.unstable_solar_matter_ore": "Unstable Solar Matter Ore",
+  "block.sarilmod.unstable_solar_matter_nether_ore": "Unstable Solar Matter Nether Ore",
+  "block.sarilmod.unstable_solar_matter_end_ore": "Unstable Solar Matter End Ore",
   "block.sarilmod.deepslate_unstable_solar_matter_ore": "Deepslate Unstable Solar Matter Ore",
   "block.sarilmod.magic_block": "Magic Block",
   "block.sarilmod.solar_matter_lamp": "Solar Matter Lamp",

@@ -22,6 +22,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.UNSTABLE_SOLAR_MATTER_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.UNSTABLE_SOLAR_MATTER_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_UNSTABLE_SOLAR_MATTER_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.UNSTABLE_SOLAR_MATTER_NETHER_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.UNSTABLE_SOLAR_MATTER_END_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MAGIC_BLOCK);
 
         solarMatterPool.stairs(ModBlocks.SOLAR_MATTER_STAIRS);

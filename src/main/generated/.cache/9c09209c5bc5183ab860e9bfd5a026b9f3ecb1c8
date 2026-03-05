@@ -1,5 +1,6 @@
-// 1.21	2026-03-02T21:17:22.703953	SarilMOD/Block Loot Tables
+// 1.21	2026-03-04T19:44:43.8437805	SarilMOD/Block Loot Tables
 1bfcfd7efc0689317f5418b433a977376a31d62e data\sarilmod\loot_table\blocks\deepslate_unstable_solar_matter_ore.json
+6e465bab368db121b3b3f6aefd347280f0b69ea3 data\sarilmod\loot_table\blocks\unstable_solar_matter_nether_ore.json
 8c9affab690b105d955e7eaae4b6bc7b87d1201b data\sarilmod\loot_table\blocks\banana_bush.json
 7bce53290695167a0cb4e6426c29ca20a72c63fa data\sarilmod\loot_table\blocks\solar_matter_trapdoor.json
 fc818e095f24bd48081d29c1bf3133f48ea4285a data\sarilmod\loot_table\blocks\solar_matter_block.json
@@ -7,6 +8,7 @@ adb730fa9d101259d3d0d1a781d4284fe7870ff1 data\sarilmod\loot_table\blocks\solar_m
 987f1bb54007799d6cccdc89ae2b27eed8e706d8 data\sarilmod\loot_table\blocks\solar_matter_button.json
 ad151a17d2d915509d2e94bbd8ffcd4091595381 data\sarilmod\loot_table\blocks\solar_matter_pressure_plate.json
 1e6ccbaab5aabeb0e29fe45682e4634b54b3d41b data\sarilmod\loot_table\blocks\cauliflower_crop.json
+361987d1a4609eba8587d08606ea21c398901b2a data\sarilmod\loot_table\blocks\unstable_solar_matter_end_ore.json
 2185a2dc670c8683cc9256a83a717648bf557bc7 data\sarilmod\loot_table\blocks\solar_matter_wall.json
 a776cccae0cf84e26d8ac74c4f05b0bbc3b06577 data\sarilmod\loot_table\blocks\solar_matter_fence_gate.json
 41684480aa8cc0d9254132cda40f29bcef69dd81 data\sarilmod\loot_table\blocks\solar_matter_fence.json

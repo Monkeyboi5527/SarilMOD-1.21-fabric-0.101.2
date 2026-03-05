@@ -37,6 +37,14 @@ public class ModBlocks {
             new ExperienceDroppingBlock(UniformIntProvider.create(3,6),
                     AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS)));
 
+    public static final Block UNSTABLE_SOLAR_MATTER_NETHER_ORE = registerBlock("unstable_solar_matter_nether_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(2,5),
+                    AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS)));
+
+    public static final Block UNSTABLE_SOLAR_MATTER_END_ORE = registerBlock("unstable_solar_matter_end_ore",
+            new ExperienceDroppingBlock(UniformIntProvider.create(3,6),
+                    AbstractBlock.Settings.copy(Blocks.ANCIENT_DEBRIS)));
+
     public static final Block MAGIC_BLOCK = registerBlock("magic_block",
             new MagicBlock(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK).sounds(ModSounds.MAGIC_BLOCK_SOUNDS)));
 

@@ -24,6 +24,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.UNSTABLE_SOLAR_MATTER_BLOCK);
                         entries.add(ModBlocks.UNSTABLE_SOLAR_MATTER_ORE);
                         entries.add(ModBlocks.DEEPSLATE_UNSTABLE_SOLAR_MATTER_ORE);
+                        entries.add(ModBlocks.UNSTABLE_SOLAR_MATTER_NETHER_ORE);
+                        entries.add(ModBlocks.UNSTABLE_SOLAR_MATTER_END_ORE);
                         entries.add(ModItems.CHISEL);
                         entries.add(ModBlocks.MAGIC_BLOCK);
                         entries.add(ModItems.BANANA);
