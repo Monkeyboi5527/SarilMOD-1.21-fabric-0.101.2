@@ -13,11 +13,9 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
-import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliage.DarkOakFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.MegaJungleTrunkPlacer;
-import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import net.saril.sarilmod.SarilMod;
 import net.saril.sarilmod.block.ModBlocks;
 
@@ -28,7 +26,7 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> UNSTABLE_SOLAR_MATTER_NETHER_ORE_KEY = registerKey("unstable_solar_matter_nether_ore");
     public static final RegistryKey<ConfiguredFeature<?,?>> UNSTABLE_SOLAR_MATTER_END_ORE_KEY = registerKey("unstable_solar_matter_end_ore");
 
-    public static final RegistryKey<ConfiguredFeature<?,?>> STELLAR_WOOD_KEY = registerKey("stellar");
+    public static final RegistryKey<ConfiguredFeature<?,?>> STELLAR_KEY = registerKey("stellar");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -48,7 +46,7 @@ public class ModConfiguredFeatures {
         register(context, UNSTABLE_SOLAR_MATTER_END_ORE_KEY, Feature.ORE, new OreFeatureConfig(endSolarMatterOre, 24));
 
 
-        register(context, STELLAR_WOOD_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+        register(context, STELLAR_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.STELLAR_LOG),
                 new MegaJungleTrunkPlacer(17, 8, 19),
 

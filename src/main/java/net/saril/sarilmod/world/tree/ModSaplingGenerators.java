@@ -8,5 +8,5 @@ import java.util.Optional;
 
 public class ModSaplingGenerators {
     public static final SaplingGenerator STELLAR = new SaplingGenerator(SarilMod.MOD_ID + ":stellar",
-            Optional.empty(), Optional.of(ModConfiguredFeatures.STELLAR_WOOD_KEY), Optional.empty());
+            Optional.empty(), Optional.of(ModConfiguredFeatures.STELLAR_KEY), Optional.empty());
 }
