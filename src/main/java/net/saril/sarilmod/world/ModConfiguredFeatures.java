@@ -53,7 +53,7 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(ModBlocks.STELLAR_LEAVES),
                 new DarkOakFoliagePlacer(ConstantIntProvider.create(5), ConstantIntProvider.create(1)),
 
-                new TwoLayersFeatureSize(3, 2, 1)).build());
+                new TwoLayersFeatureSize(3, 2, 1)).dirtProvider(BlockStateProvider.of(Blocks.NETHERITE_BLOCK)).build());
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

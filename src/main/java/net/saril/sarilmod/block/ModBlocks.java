@@ -13,10 +13,7 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.saril.sarilmod.SarilMod;
-import net.saril.sarilmod.block.custom.BananaBushBlock;
-import net.saril.sarilmod.block.custom.CauliflowerCropBlock;
-import net.saril.sarilmod.block.custom.MagicBlock;
-import net.saril.sarilmod.block.custom.SolarMatterLampBlock;
+import net.saril.sarilmod.block.custom.*;
 import net.saril.sarilmod.sound.ModSounds;
 import net.saril.sarilmod.world.tree.ModSaplingGenerators;
 
@@ -112,7 +109,7 @@ public class ModBlocks {
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
 
     public static final Block STELLAR_SAPLING = registerBlock("stellar_sapling",
-            new SaplingBlock(ModSaplingGenerators.STELLAR,AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+            new ModSaplingBlock(ModSaplingGenerators.STELLAR,AbstractBlock.Settings.copy(Blocks.OAK_SAPLING), Blocks.NETHERITE_BLOCK));
 
 
 
