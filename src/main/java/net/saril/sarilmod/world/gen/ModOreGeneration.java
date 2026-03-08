@@ -8,12 +8,12 @@ import net.saril.sarilmod.world.ModPlacedFeatures;
 public class ModOreGeneration {
     public static void generateOres(){
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
-                ModPlacedFeatures.UNSTABLE_SOLAR_MATTER_ORE_PLACE_KEY);
+                ModPlacedFeatures.UNSTABLE_SOLAR_MATTER_ORE_PLACED_KEY);
 
         BiomeModifications.addFeature(BiomeSelectors.foundInTheNether(), GenerationStep.Feature.UNDERGROUND_ORES,
-                ModPlacedFeatures.UNSTABLE_SOLAR_MATTER_NETHER_ORE_PLACE_KEY);
+                ModPlacedFeatures.UNSTABLE_SOLAR_MATTER_NETHER_ORE_PLACED_KEY);
 
         BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES,
-                ModPlacedFeatures.UNSTABLE_SOLAR_MATTER_END_ORE_PLACE_KEY);
+                ModPlacedFeatures.UNSTABLE_SOLAR_MATTER_END_ORE_PLACED_KEY);
     }
 }

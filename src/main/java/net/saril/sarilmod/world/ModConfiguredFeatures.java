@@ -2,6 +2,7 @@ package net.saril.sarilmod.world;
 
 import com.google.common.collect.Lists;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.SweetBerryBushBlock;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -18,6 +19,7 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.MegaJungleTrunkPlacer;
 import net.saril.sarilmod.SarilMod;
 import net.saril.sarilmod.block.ModBlocks;
+import net.saril.sarilmod.block.custom.BananaBushBlock;
 
 import java.util.List;
 
@@ -27,6 +29,8 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?,?>> UNSTABLE_SOLAR_MATTER_END_ORE_KEY = registerKey("unstable_solar_matter_end_ore");
 
     public static final RegistryKey<ConfiguredFeature<?,?>> STELLAR_KEY = registerKey("stellar");
+
+    public static final RegistryKey<ConfiguredFeature<?,?>> BANANA_BUSH_KEY = registerKey("banana_bush_key");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -54,6 +58,11 @@ public class ModConfiguredFeatures {
                 new DarkOakFoliagePlacer(ConstantIntProvider.create(5), ConstantIntProvider.create(1)),
 
                 new TwoLayersFeatureSize(3, 2, 1)).dirtProvider(BlockStateProvider.of(Blocks.NETHERITE_BLOCK)).build());
+
+        register(context, BANANA_BUSH_KEY, Feature.RANDOM_PATCH, ConfiguredFeatures.createRandomPatchFeatureConfig(Feature.SIMPLE_BLOCK,
+                new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.BANANA_BUSH_BLOCK
+                        .getDefaultState().with(BananaBushBlock.AGE, 3))),
+                List.of(Blocks.GRASS_BLOCK)));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

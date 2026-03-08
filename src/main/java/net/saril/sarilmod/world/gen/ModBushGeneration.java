@@ -6,9 +6,9 @@ import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 import net.saril.sarilmod.world.ModPlacedFeatures;
 
-public class ModTreeGeneration {
-    public static void generateTrees(){
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.JUNGLE),
-                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.STELLAR_PLACED_KEY);
+public class ModBushGeneration {
+    public static void generateBushes(){
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FOREST),
+                GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.BANANA_BUSH_PLACED_KEY);
     }
 }
