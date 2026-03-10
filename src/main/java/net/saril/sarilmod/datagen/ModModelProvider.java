@@ -11,6 +11,8 @@ import net.saril.sarilmod.block.custom.CauliflowerCropBlock;
 import net.saril.sarilmod.block.custom.SolarMatterLampBlock;
 import net.saril.sarilmod.item.ModItems;
 
+import java.util.Optional;
+
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
         super(output);
@@ -88,6 +90,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModBlocks.STELLAR_SAPLING.asItem(),  Models.GENERATED);
         //itemModelGenerator.register(ModItems.SOLAR_MATTER_HAMMER,new Model(Optional.of(id("item/solar_matter_hammer")), Optional.empty()));
 
+        itemModelGenerator.register(ModItems.MANTIS_SPAWN_EGG,
+                new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
 
     }
 }

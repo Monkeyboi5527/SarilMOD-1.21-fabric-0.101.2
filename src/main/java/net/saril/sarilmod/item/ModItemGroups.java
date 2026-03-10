@@ -3,6 +3,7 @@ package net.saril.sarilmod.item;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -60,6 +61,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.STELLAR_PLANKS);
                         entries.add(ModBlocks.STELLAR_LEAVES);
                         entries.add(ModBlocks.STELLAR_SAPLING);
+                        entries.add(ModItems.MANTIS_SPAWN_EGG);
 
 
 

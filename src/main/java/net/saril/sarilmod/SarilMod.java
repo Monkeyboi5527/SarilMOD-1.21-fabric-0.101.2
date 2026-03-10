@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -15,6 +16,8 @@ import net.minecraft.util.ActionResult;
 import net.saril.sarilmod.component.ModDataComponentTypes;
 import net.saril.sarilmod.effect.ModEffects;
 import net.saril.sarilmod.enchantment.ModEnchantmentEffects;
+import net.saril.sarilmod.entity.ModEntities;
+import net.saril.sarilmod.entity.custom.MantisEntity;
 import net.saril.sarilmod.item.ModItemGroups;
 import net.saril.sarilmod.item.ModItems;
 import net.saril.sarilmod.block.ModBlocks;
@@ -68,5 +71,9 @@ public class SarilMod implements ModInitializer {
 		StrippableBlockRegistry.register(ModBlocks.STELLAR_WOOD, ModBlocks.STRIPPED_STELLAR_WOOD);
 
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STELLAR_LEAVES, 20, 40);
+
+		ModEntities.registerModEntities();
+
+		FabricDefaultAttributeRegistry.register(ModEntities.MANTIS, MantisEntity.createAttributes());
 	}
 }

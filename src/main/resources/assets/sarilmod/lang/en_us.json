@@ -68,6 +68,8 @@
   "enchantment.sarilmod.lightning_striker": "Lightning Striker",
   "enchantment.sarilmod.test": "Test(idk what ts does)",
 
+  "item.sarilmod.mantis_spawn_egg": "Mantis Spawn Egg",
+  "entity.sarilmod.mantis": "Mantis",
 
   "itemgroup.sarilmod.sarilmod": "SarilMOD"
 }

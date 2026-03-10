@@ -11,6 +11,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.saril.sarilmod.SarilMod;
 import net.saril.sarilmod.block.ModBlocks;
+import net.saril.sarilmod.entity.ModEntities;
 import net.saril.sarilmod.item.custom.ChiselItem;
 import net.saril.sarilmod.item.custom.HammerItem;
 import net.saril.sarilmod.item.custom.ModArmorItem;
@@ -103,7 +104,8 @@ public class ModItems {
     public static final Item CAULIFLOWER_SEEDS = registerItem("cauliflower_seeds",
             new AliasedBlockItem(ModBlocks.CAULIFLOWER_CROP, new Item.Settings()));
 
-
+    public static final Item MANTIS_SPAWN_EGG = registerItem("mantis_spawn_egg",
+            new SpawnEggItem(ModEntities.MANTIS,0x9dc783, 0xbfaf5f, new Item.Settings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(SarilMod.MOD_ID, name), item);
