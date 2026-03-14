@@ -15,6 +15,7 @@ import net.saril.sarilmod.entity.ModEntities;
 import net.saril.sarilmod.item.custom.ChiselItem;
 import net.saril.sarilmod.item.custom.HammerItem;
 import net.saril.sarilmod.item.custom.ModArmorItem;
+import net.saril.sarilmod.item.custom.TomahawkItem;
 import net.saril.sarilmod.sound.ModSounds;
 
 import java.util.List;
@@ -106,6 +107,9 @@ public class ModItems {
 
     public static final Item MANTIS_SPAWN_EGG = registerItem("mantis_spawn_egg",
             new SpawnEggItem(ModEntities.MANTIS,0x9dc783, 0xbfaf5f, new Item.Settings()));
+
+    public static final Item TOMAHAWK = registerItem("tomahawk",
+            new TomahawkItem(new Item.Settings().maxCount(16).rarity(Rarity.EPIC).fireproof()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(SarilMod.MOD_ID, name), item);

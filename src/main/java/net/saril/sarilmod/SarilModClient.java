@@ -9,6 +9,8 @@ import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.entity.ModEntities;
 import net.saril.sarilmod.entity.client.MantisModel;
 import net.saril.sarilmod.entity.client.MantisRenderer;
+import net.saril.sarilmod.entity.client.TomahawkProjectileModel;
+import net.saril.sarilmod.entity.client.TomahawkProjectileRenderer;
 import net.saril.sarilmod.util.ModModelPredicates;
 
 public class SarilModClient implements ClientModInitializer {
@@ -25,5 +27,8 @@ public class SarilModClient implements ClientModInitializer {
 
         EntityModelLayerRegistry.registerModelLayer(MantisModel.MANTIS, MantisModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.MANTIS, MantisRenderer::new);
+
+        EntityModelLayerRegistry.registerModelLayer(TomahawkProjectileModel.TOMAHAWK, TomahawkProjectileModel::getTexturedModelData);
+        EntityRendererRegistry.register(ModEntities.TOMAHAWK, TomahawkProjectileRenderer::new);
     }
 }
