@@ -63,6 +63,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.STELLAR_SAPLING);
                         entries.add(ModItems.MANTIS_SPAWN_EGG);
                         entries.add(ModItems.TOMAHAWK);
+                        entries.add(ModBlocks.CHAIR);
 
 
 

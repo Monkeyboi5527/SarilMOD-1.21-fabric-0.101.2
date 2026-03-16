@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "sarilmod:block/chair",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "sarilmod:block/chair"
+    },
+    "facing=south": {
+      "model": "sarilmod:block/chair",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "sarilmod:block/chair",
+      "y": 270
+    }
+  }
+}

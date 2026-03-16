@@ -59,6 +59,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSingleton(ModBlocks.STELLAR_LEAVES, TexturedModel.LEAVES);
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.STELLAR_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
+        blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.CHAIR);
     }
 
 

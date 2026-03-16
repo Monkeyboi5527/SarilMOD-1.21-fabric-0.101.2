@@ -111,7 +111,8 @@ public class ModBlocks {
     public static final Block STELLAR_SAPLING = registerBlock("stellar_sapling",
             new ModSaplingBlock(ModSaplingGenerators.STELLAR,AbstractBlock.Settings.copy(Blocks.OAK_SAPLING), Blocks.NETHERITE_BLOCK));
 
-
+    public static final Block CHAIR = registerBlock("chair",
+            new ChairBlock(AbstractBlock.Settings.create().nonOpaque()));
 
     /*
     public static final Block SOLAR_MATTER_SIGN = registerBlock("solar_matter_sign",
