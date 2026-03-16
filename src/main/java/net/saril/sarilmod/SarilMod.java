@@ -5,14 +5,19 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.passive.SheepEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.village.TradeOffer;
+import net.minecraft.village.TradedItem;
+import net.minecraft.village.VillagerProfession;
 import net.saril.sarilmod.component.ModDataComponentTypes;
 import net.saril.sarilmod.effect.ModEffects;
 import net.saril.sarilmod.enchantment.ModEnchantmentEffects;
@@ -77,5 +82,39 @@ public class SarilMod implements ModInitializer {
 
 		FabricDefaultAttributeRegistry.register(ModEntities.MANTIS, MantisEntity.createAttributes());
 		ModVillagers.registerVillagers();
+
+		TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1, factories ->
+				factories.add(((entity, random) -> new TradeOffer(
+						new TradedItem(Items.EMERALD, 3),
+						new ItemStack(ModItems.BANANA, 1), 7, 2, 0.6f)
+				)));
+
+		TradeOfferHelper.registerVillagerOffers(ModVillagers.MONKEY, 1, factories -> {
+				factories.add(((entity, random) -> new TradeOffer(
+						new TradedItem(Items.EMERALD, 3),
+						new ItemStack(ModItems.BANANA, 4), 7, 2, 0.6f)));
+
+
+
+			});
+
+		TradeOfferHelper.registerVillagerOffers(ModVillagers.MONKEY, 2, factories -> {
+			factories.add(((entity, random) -> new TradeOffer(
+					new TradedItem(Items.EMERALD, 15),
+					new ItemStack(ModItems.CHISEL, 1), 3, 5, 0.12f)));
+
+			factories.add(((entity, random) -> new TradeOffer(
+					new TradedItem(ModItems.UNSTABLE_SOLAR_MATTER, 20),
+					new ItemStack(ModItems.SOLAR_MATTER_HAMMER, 1), 3, 10, 0.18f)));
+
+
+		});
+
+		TradeOfferHelper.registerWanderingTraderOffers( 1, factories ->
+				factories.add(((entity, random) -> new TradeOffer(
+						new TradedItem(Items.EMERALD, 128),
+						new ItemStack(ModItems.TOMAHAWK, 1), 1, 2000, 0.6f)
+				)));
+
 	}
 }
