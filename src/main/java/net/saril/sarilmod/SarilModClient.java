@@ -7,10 +7,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.entity.ModEntities;
-import net.saril.sarilmod.entity.client.MantisModel;
-import net.saril.sarilmod.entity.client.MantisRenderer;
-import net.saril.sarilmod.entity.client.TomahawkProjectileModel;
-import net.saril.sarilmod.entity.client.TomahawkProjectileRenderer;
+import net.saril.sarilmod.entity.client.*;
 import net.saril.sarilmod.util.ModModelPredicates;
 
 public class SarilModClient implements ClientModInitializer {
@@ -30,5 +27,7 @@ public class SarilModClient implements ClientModInitializer {
 
         EntityModelLayerRegistry.registerModelLayer(TomahawkProjectileModel.TOMAHAWK, TomahawkProjectileModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.TOMAHAWK, TomahawkProjectileRenderer::new);
+
+        EntityRendererRegistry.register(ModEntities.CHAIR, ChairRenderer::new);
     }
 }
