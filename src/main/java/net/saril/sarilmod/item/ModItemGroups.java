@@ -64,6 +64,8 @@ public class ModItemGroups {
                         entries.add(ModItems.MANTIS_SPAWN_EGG);
                         entries.add(ModItems.TOMAHAWK);
                         entries.add(ModBlocks.CHAIR);
+                        entries.add(ModItems.SPECTRE_STAFF);
+
 
 
 

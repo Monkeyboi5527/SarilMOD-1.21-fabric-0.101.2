@@ -109,7 +109,10 @@ public class ModItems {
             new SpawnEggItem(ModEntities.MANTIS,0x9dc783, 0xbfaf5f, new Item.Settings()));
 
     public static final Item TOMAHAWK = registerItem("tomahawk",
-            new TomahawkItem(new Item.Settings().maxCount(16).rarity(Rarity.EPIC).fireproof()));
+            new TomahawkItem(new Item.Settings().maxCount(16).rarity(Rarity.EPIC)));
+
+    public static final Item SPECTRE_STAFF = registerItem("spectre_staff",
+            new Item(new Item.Settings().maxCount(1).rarity(Rarity.EPIC).fireproof()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(SarilMod.MOD_ID, name), item);
