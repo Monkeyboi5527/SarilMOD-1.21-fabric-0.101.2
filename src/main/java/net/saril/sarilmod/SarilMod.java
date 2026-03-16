@@ -24,6 +24,7 @@ import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.potion.ModPotions;
 import net.saril.sarilmod.sound.ModSounds;
 import net.saril.sarilmod.util.HammerUsageEvent;
+import net.saril.sarilmod.villager.ModVillagers;
 import net.saril.sarilmod.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -75,5 +76,6 @@ public class SarilMod implements ModInitializer {
 		ModEntities.registerModEntities();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.MANTIS, MantisEntity.createAttributes());
+		ModVillagers.registerVillagers();
 	}
 }

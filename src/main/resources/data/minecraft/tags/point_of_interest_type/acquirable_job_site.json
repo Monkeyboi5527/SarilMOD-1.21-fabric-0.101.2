@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "sarilmod:skl_poi",
+      "required": false
+    }
+  ]
+}
