@@ -77,7 +77,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SOLAR_MATTER_AXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.SOLAR_MATTER_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.SOLAR_MATTER_HOE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.SOLAR_MATTER_HAMMER, Models.HANDHELD);
+//        itemModelGenerator.register(ModItems.SOLAR_MATTER_HAMMER, Models.HANDHELD);
 
         itemModelGenerator.registerArmor((ArmorItem) ModItems.SOLAR_MATTER_HELMET);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.SOLAR_MATTER_CHESTPLATE);
@@ -89,7 +89,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.FEIN_MUSIC_DISC, Models.GENERATED);
 
         itemModelGenerator.register(ModBlocks.STELLAR_SAPLING.asItem(),  Models.GENERATED);
-        //itemModelGenerator.register(ModItems.SOLAR_MATTER_HAMMER,new Model(Optional.of(id("item/solar_matter_hammer")), Optional.empty()));
 
         itemModelGenerator.register(ModItems.MANTIS_SPAWN_EGG,
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
