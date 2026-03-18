@@ -30,6 +30,7 @@ import net.saril.sarilmod.particle.ModParticles;
 import net.saril.sarilmod.potion.ModPotions;
 import net.saril.sarilmod.sound.ModSounds;
 import net.saril.sarilmod.util.HammerUsageEvent;
+import net.saril.sarilmod.util.ModLootTableModifiers;
 import net.saril.sarilmod.villager.ModVillagers;
 import net.saril.sarilmod.world.gen.ModWorldGeneration;
 import org.slf4j.Logger;
@@ -118,5 +119,6 @@ public class SarilMod implements ModInitializer {
 				)));
 
 		ModParticles.registerParticles();
+		ModLootTableModifiers.modifyLootTables();
 	}
 }
