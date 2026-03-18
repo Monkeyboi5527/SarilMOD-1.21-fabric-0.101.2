@@ -26,6 +26,7 @@ import net.saril.sarilmod.entity.custom.MantisEntity;
 import net.saril.sarilmod.item.ModItemGroups;
 import net.saril.sarilmod.item.ModItems;
 import net.saril.sarilmod.block.ModBlocks;
+import net.saril.sarilmod.particle.ModParticles;
 import net.saril.sarilmod.potion.ModPotions;
 import net.saril.sarilmod.sound.ModSounds;
 import net.saril.sarilmod.util.HammerUsageEvent;
@@ -116,5 +117,6 @@ public class SarilMod implements ModInitializer {
 						new ItemStack(ModItems.TOMAHAWK, 1), 1, 2000, 0.6f)
 				)));
 
+		ModParticles.registerParticles();
 	}
 }

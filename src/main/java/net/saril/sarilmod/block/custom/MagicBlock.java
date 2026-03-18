@@ -15,6 +15,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.saril.sarilmod.item.ModItems;
+import net.saril.sarilmod.particle.ModParticles;
 import net.saril.sarilmod.util.ModTags;
 
 import java.util.List;
@@ -28,6 +29,11 @@ public class MagicBlock extends Block {
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
 
+        for (int i = 0; i < 1000; i++) {
+            world.addParticle(ModParticles.SOLAR_MATTER_PARTICLE, pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5,
+                    1+i, 1+i, 1+i);
+        }
+
         world.createExplosion(player,pos.getX(), pos.getY()-1, pos.getZ(), 12f, World.ExplosionSourceType.TNT);
         return ActionResult.SUCCESS;
     }
@@ -37,6 +43,11 @@ public class MagicBlock extends Block {
         if(entity instanceof ItemEntity itemEntity) {
             if(isValidItem(itemEntity.getStack())) {
                 itemEntity.setStack(new ItemStack(Items.DIAMOND, itemEntity.getStack().getCount()));
+                for (int i = 0; i < 1000; i++) {
+                    world.addParticle(ModParticles.SOLAR_MATTER_PARTICLE, pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5,
+                            1, 1, 1);
+                }
+
             }
         }
 

@@ -19,6 +19,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
 import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.component.ModDataComponentTypes;
+import net.saril.sarilmod.particle.ModParticles;
 import net.saril.sarilmod.sound.ModSounds;
 
 import java.util.List;
@@ -63,6 +64,10 @@ public class ChiselItem extends Item {
                 ((ServerWorld) world).spawnParticles(ParticleTypes.LARGE_SMOKE,
                         context.getBlockPos().getX() + 0.5, context.getBlockPos().getY() + 1.5,
                         context.getBlockPos().getZ() + 0.5, 15, 0, 0, 0, 5);
+
+                ((ServerWorld) world).spawnParticles(ModParticles.SOLAR_MATTER_PARTICLE,
+                        context.getBlockPos().getX() + 0.5, context.getBlockPos().getY() + 1.5,
+                        context.getBlockPos().getZ() + 0.5, 50, 0, 0, 0, 1);
 
                 context.getStack().set(ModDataComponentTypes.COORDINATES, context.getBlockPos());
             }

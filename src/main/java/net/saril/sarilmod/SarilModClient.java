@@ -2,12 +2,16 @@ package net.saril.sarilmod;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.client.particle.ParticleFactory;
 import net.minecraft.client.render.RenderLayer;
 import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.entity.ModEntities;
 import net.saril.sarilmod.entity.client.*;
+import net.saril.sarilmod.particle.ModParticles;
+import net.saril.sarilmod.particle.SolarMatterParticle;
 import net.saril.sarilmod.util.ModModelPredicates;
 
 public class SarilModClient implements ClientModInitializer {
@@ -29,5 +33,7 @@ public class SarilModClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.TOMAHAWK, TomahawkProjectileRenderer::new);
 
         EntityRendererRegistry.register(ModEntities.CHAIR, ChairRenderer::new);
+
+        ParticleFactoryRegistry.getInstance().register(ModParticles.SOLAR_MATTER_PARTICLE, SolarMatterParticle.Factory::new);
     }
 }
