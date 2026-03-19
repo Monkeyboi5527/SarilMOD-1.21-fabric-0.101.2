@@ -18,6 +18,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradedItem;
 import net.minecraft.village.VillagerProfession;
+import net.saril.sarilmod.block.entity.ModBlockEntities;
 import net.saril.sarilmod.component.ModDataComponentTypes;
 import net.saril.sarilmod.effect.ModEffects;
 import net.saril.sarilmod.enchantment.ModEnchantmentEffects;
@@ -120,5 +121,6 @@ public class SarilMod implements ModInitializer {
 
 		ModParticles.registerParticles();
 		ModLootTableModifiers.modifyLootTables();
+		ModBlockEntities.registerBlockEntities();
 	}
 }

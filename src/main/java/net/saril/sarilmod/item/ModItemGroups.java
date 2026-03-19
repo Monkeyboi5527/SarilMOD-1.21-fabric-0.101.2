@@ -65,6 +65,7 @@ public class ModItemGroups {
                         entries.add(ModItems.TOMAHAWK);
                         entries.add(ModBlocks.CHAIR);
                         entries.add(ModItems.SPECTRE_STAFF);
+                        entries.add(ModBlocks.MATTER_STABILIZER);
 
 
 

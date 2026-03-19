@@ -114,6 +114,9 @@ public class ModBlocks {
     public static final Block CHAIR = registerBlock("chair",
             new ChairBlock(AbstractBlock.Settings.create().nonOpaque()));
 
+    public static final Block MATTER_STABILIZER = registerBlock("matter_stabilizer",
+            new MatterStabilizerBlock(AbstractBlock.Settings.create().nonOpaque()));
+
     /*
     public static final Block SOLAR_MATTER_SIGN = registerBlock("solar_matter_sign",
             new SignBlock(WoodType.SPRUCE,
