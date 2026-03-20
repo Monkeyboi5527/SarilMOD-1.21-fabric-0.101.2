@@ -29,6 +29,7 @@ import net.saril.sarilmod.item.ModItems;
 import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.particle.ModParticles;
 import net.saril.sarilmod.potion.ModPotions;
+import net.saril.sarilmod.screen.ModScreenHandlers;
 import net.saril.sarilmod.sound.ModSounds;
 import net.saril.sarilmod.util.HammerUsageEvent;
 import net.saril.sarilmod.util.ModLootTableModifiers;
@@ -122,5 +123,6 @@ public class SarilMod implements ModInitializer {
 		ModParticles.registerParticles();
 		ModLootTableModifiers.modifyLootTables();
 		ModBlockEntities.registerBlockEntities();
+		ModScreenHandlers.registerScreenHandlers();
 	}
 }

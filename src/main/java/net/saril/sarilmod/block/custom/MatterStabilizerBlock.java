@@ -79,6 +79,8 @@ public class MatterStabilizerBlock extends BlockWithEntity implements BlockEntit
 
                 matterStabilizerBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
+            } else if(player.isSneaking() && !world.isClient()) {
+                player.openHandledScreen(matterStabilizerBlockEntity);
             }
         }
 
