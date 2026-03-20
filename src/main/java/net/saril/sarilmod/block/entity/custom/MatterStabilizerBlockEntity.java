@@ -17,14 +17,23 @@ import org.jetbrains.annotations.Nullable;
 
 public class MatterStabilizerBlockEntity extends BlockEntity implements ImplementedInventory {
    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
+   private float rotation = 0;
 
-    public MatterStabilizerBlockEntity( BlockPos pos, BlockState state) {
-        super(ModBlockEntities.PEDESTAL_BE, pos, state);
+   public MatterStabilizerBlockEntity( BlockPos pos, BlockState state) {
+        super(ModBlockEntities.MATTER_STABILIZER_BE, pos, state);
     }
 
     @Override
     public DefaultedList<ItemStack> getItems() {
         return inventory;
+    }
+
+    public float getRenderingRotation() {
+        rotation += 0.7f;
+        if(rotation >= 360) {
+            rotation = 0;
+        }
+        return rotation;
     }
 
     @Override
