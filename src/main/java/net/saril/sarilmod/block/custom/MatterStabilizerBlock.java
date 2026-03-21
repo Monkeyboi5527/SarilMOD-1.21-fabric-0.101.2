@@ -3,6 +3,8 @@ package net.saril.sarilmod.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
@@ -15,6 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.saril.sarilmod.block.entity.ModBlockEntities;
 import net.saril.sarilmod.block.entity.custom.MatterStabilizerBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
@@ -34,7 +37,7 @@ public class MatterStabilizerBlock extends BlockWithEntity implements BlockEntit
 
     @Override
     protected MapCodec<? extends BlockWithEntity> getCodec() {
-        return null;
+        return CODEC;
     }
 
     @Override
@@ -65,25 +68,37 @@ public class MatterStabilizerBlock extends BlockWithEntity implements BlockEntit
                                              PlayerEntity player, Hand hand, BlockHitResult hit) {
         if(world.getBlockEntity(pos) instanceof MatterStabilizerBlockEntity matterStabilizerBlockEntity) {
             if(matterStabilizerBlockEntity.isEmpty() && !stack.isEmpty()) {
-                matterStabilizerBlockEntity.setStack(0, stack.copyWithCount(1));
+                matterStabilizerBlockEntity.setStack(0, stack.copyWithCount(stack.getCount()));
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 2f);
-                stack.decrement(1);
+                stack.decrement(stack.getCount());
 
                 matterStabilizerBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
             } else if(stack.isEmpty() && !player.isSneaking()) {
-                ItemStack stackOnPedestal = matterStabilizerBlockEntity.getStack(0);
-                player.setStackInHand(Hand.MAIN_HAND, stackOnPedestal);
-                world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 1f);
-                matterStabilizerBlockEntity.clear();
+                player.openHandledScreen(matterStabilizerBlockEntity);
 
+            } else if(player.isSneaking() && !world.isClient()) {
+                ItemStack stackOnMatterStabilizer = matterStabilizerBlockEntity.getStack(0);
+                player.setStackInHand(Hand.MAIN_HAND, stackOnMatterStabilizer);
+                world.playSound(player, pos, SoundEvents.ENCHANT_THORNS_HIT, SoundCategory.BLOCKS, 1f, 1f);
+                matterStabilizerBlockEntity.clear();
                 matterStabilizerBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
-            } else if(player.isSneaking() && !world.isClient()) {
-                player.openHandledScreen(matterStabilizerBlockEntity);
+
             }
         }
 
         return ItemActionResult.SUCCESS;
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        if(world.isClient()) {
+            return null;
+        }
+
+        return validateTicker(type, ModBlockEntities.MATTER_STABILIZER_BE,
+                (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));
     }
 }

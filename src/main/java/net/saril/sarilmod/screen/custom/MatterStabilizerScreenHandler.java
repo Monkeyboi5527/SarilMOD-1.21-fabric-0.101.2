@@ -5,32 +5,51 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.util.math.BlockPos;
+import net.saril.sarilmod.block.entity.custom.MatterStabilizerBlockEntity;
 import net.saril.sarilmod.screen.ModScreenHandlers;
 
 public class MatterStabilizerScreenHandler extends ScreenHandler {
     private final Inventory inventory;
+    private final PropertyDelegate propertyDelegate;
+    public final MatterStabilizerBlockEntity blockEntity;
 
     public MatterStabilizerScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos pos) {
-        this(syncId,playerInventory, playerInventory.player.getWorld().getBlockEntity(pos));
+        this(syncId,playerInventory, playerInventory.player.getWorld().getBlockEntity(pos),new ArrayPropertyDelegate(2));
     }
 
-    public MatterStabilizerScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity) {
+    public MatterStabilizerScreenHandler(int syncId, PlayerInventory playerInventory,
+                                         BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
         super(ModScreenHandlers.MATTER_STABILIZER_SCREEN_HANDLER, syncId);
         this.inventory = ((Inventory) blockEntity);
+        this.blockEntity = ((MatterStabilizerBlockEntity) blockEntity);
+        this.propertyDelegate = arrayPropertyDelegate;
 
-        this.addSlot(new Slot(inventory, 0, 80, 35) {
-            @Override
-            public int getMaxItemCount() {
-                return 1;
-            }
-        });
+        this.addSlot(new Slot(inventory, 0, 54, 34));
+        this.addSlot(new Slot(inventory, 1, 104, 34));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
+
+        addProperties(arrayPropertyDelegate);
     }
+
+    public boolean isCrafting() {
+        return propertyDelegate.get(0) > 0;
+    }
+
+    public int getScaledArrowProgress() {
+        int progress = this.propertyDelegate.get(0);
+        int maxProgress = this.propertyDelegate.get(1);
+        int arrowPixelSize = 24;
+
+        return maxProgress != 0 && progress != 0 ? progress * arrowPixelSize / maxProgress : 0;
+    }
+
 
     @Override
     public ItemStack quickMove(PlayerEntity player, int invSlot) {

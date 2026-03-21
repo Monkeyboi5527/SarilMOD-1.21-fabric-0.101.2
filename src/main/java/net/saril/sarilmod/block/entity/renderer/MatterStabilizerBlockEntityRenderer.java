@@ -22,13 +22,26 @@ public class MatterStabilizerBlockEntityRenderer implements BlockEntityRenderer<
     @Override
     public void render(MatterStabilizerBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
-        ItemStack stack = entity.getStack(0);
+
+        ItemStack input = entity.getStack(0);
+        ItemStack output = entity.getStack(1);
+
+        ItemStack stack;
+        if (input.isEmpty() && !output.isEmpty()) {
+            stack = output;
+        } else if (!input.isEmpty()) {
+            stack = input;
+        } else {
+            return;
+        }
 
         matrices.push();
         matrices.translate(0.5f, 0.62f, 0.5f);
         matrices.scale(0.3f, 0.3f, 0.3f);
-        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(entity.getRenderingRotation()));
         matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(90));
+        if (!input.isEmpty()) {
+            matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(entity.getRenderingRotation()));
+        }
 
         itemRenderer.renderItem(stack, ModelTransformationMode.GUI, getLightLevel(entity.getWorld(),
                 entity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, entity.getWorld(), 1);
