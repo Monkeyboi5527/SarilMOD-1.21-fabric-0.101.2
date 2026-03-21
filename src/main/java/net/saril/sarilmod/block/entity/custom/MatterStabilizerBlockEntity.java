@@ -12,6 +12,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -23,8 +24,13 @@ import net.minecraft.world.World;
 import net.saril.sarilmod.block.entity.ImplementedInventory;
 import net.saril.sarilmod.block.entity.ModBlockEntities;
 import net.saril.sarilmod.item.ModItems;
+import net.saril.sarilmod.recipe.MatterStabilizerRecipe;
+import net.saril.sarilmod.recipe.MatterStabilizerRecipeInput;
+import net.saril.sarilmod.recipe.ModRecipes;
 import net.saril.sarilmod.screen.custom.MatterStabilizerScreenHandler;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class MatterStabilizerBlockEntity extends BlockEntity implements ImplementedInventory, ExtendedScreenHandlerFactory<BlockPos> {
    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
@@ -146,8 +152,9 @@ public class MatterStabilizerBlockEntity extends BlockEntity implements Implemen
     }
 
     private void craftItem() {
-        ItemStack output = new ItemStack(ModItems.SOLAR_MATTER, 1);
+        Optional<RecipeEntry<MatterStabilizerRecipe>> recipe = getCurrentRecipe();
 
+        ItemStack output = recipe.get().value().output();
         this.removeStack(INPUT_SLOT, 1);
         this.setStack(OUTPUT_SLOT, new ItemStack(output.getItem(),
                 this.getStack(OUTPUT_SLOT).getCount() + output.getCount()));
@@ -162,11 +169,18 @@ public class MatterStabilizerBlockEntity extends BlockEntity implements Implemen
     }
 
     private boolean hasRecipe() {
-        Item input = ModItems.UNSTABLE_SOLAR_MATTER;
-        ItemStack output = new ItemStack(ModItems.SOLAR_MATTER, 1);
+        Optional<RecipeEntry<MatterStabilizerRecipe>> recipe = getCurrentRecipe();
+        if(recipe.isEmpty()) {
+            return false;
+        }
+        ItemStack output = recipe.get().value().output();
 
-        return this.getStack(INPUT_SLOT).isOf(input) &&
-                canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+    }
+
+    private Optional<RecipeEntry<MatterStabilizerRecipe>> getCurrentRecipe() {
+        return this.getWorld().getRecipeManager().
+                getFirstMatch(ModRecipes.MATTER_STABILIZER_TYPE, new MatterStabilizerRecipeInput(inventory.get(INPUT_SLOT)), this.world);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
