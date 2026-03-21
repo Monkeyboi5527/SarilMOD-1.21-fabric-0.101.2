@@ -19,6 +19,9 @@
 		],
 		"client": [
 			"net.saril.sarilmod.SarilModClient"
+		],
+		"rei_client": [
+			"net.saril.sarilmod.compat.SarilModREIClient"
 		]
 	},
 	"mixins": [
