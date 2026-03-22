@@ -10,7 +10,8 @@ public record MatterStabilizerRecipeInput(ItemStack input) implements RecipeInpu
     }
 
     @Override
-    public int getSize() {
+    public int size() {
         return 1;
     }
+
 }

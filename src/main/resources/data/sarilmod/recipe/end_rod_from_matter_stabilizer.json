@@ -1,8 +1,6 @@
 {
   "type": "sarilmod:matter_stabilizer",
-  "ingredient": {
-    "item": "minecraft:stick"
-  },
+  "ingredient": "minecraft:stick",
   "result": {
     "id": "minecraft:end_rod"
   }

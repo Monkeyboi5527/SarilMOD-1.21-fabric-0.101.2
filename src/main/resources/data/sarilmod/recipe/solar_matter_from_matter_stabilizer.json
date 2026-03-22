@@ -1,8 +1,6 @@
 {
   "type": "sarilmod:matter_stabilizer",
-  "ingredient": {
-    "item": "sarilmod:unstable_solar_matter"
-  },
+  "ingredient": "sarilmod:unstable_solar_matter",
   "result": {
     "id": "sarilmod:solar_matter"
   }

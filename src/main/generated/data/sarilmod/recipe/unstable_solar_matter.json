@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "sarilmod:unstable_solar_matter_block"
-    }
+    "sarilmod:unstable_solar_matter_block"
   ],
   "result": {
     "count": 9,

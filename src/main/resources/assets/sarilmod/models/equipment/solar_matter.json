@@ -1,0 +1,24 @@
+{
+  "layers": {
+    "wolf_body": [
+      {
+        "texture": "sarilmod:solar_matter"
+      }
+    ],
+    "horse_body": [
+      {
+        "texture": "sarilmod:solar_matter"
+      }
+    ],
+    "humanoid": [
+      {
+        "texture": "sarilmod:solar_matter"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "sarilmod:solar_matter"
+      }
+    ]
+  }
+}

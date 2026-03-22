@@ -1,8 +1,6 @@
 {
   "type": "sarilmod:matter_stabilizer",
-  "ingredient": {
-    "item": "sarilmod:banana"
-  },
+  "ingredient": "sarilmod:banana",
   "result": {
     "count": 64,
     "id": "sarilmod:tomahawk"

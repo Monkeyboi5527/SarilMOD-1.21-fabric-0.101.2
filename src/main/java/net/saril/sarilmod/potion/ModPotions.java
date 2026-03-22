@@ -12,7 +12,7 @@ import net.saril.sarilmod.effect.ModEffects;
 public class ModPotions {
 
     public static RegistryEntry<Potion> SLIMEY_POTION = registerPotion("slimey_potion",
-            new Potion(new StatusEffectInstance(ModEffects.SLIMEY, 1200, 0)));
+            new Potion("slimey_potion",new StatusEffectInstance(ModEffects.SLIMEY, 1200, 0)));
 
     private static RegistryEntry<Potion> registerPotion(String name, Potion potion) {
         return Registry.registerReference(Registries.POTION, Identifier.of(SarilMod.MOD_ID, name), potion);

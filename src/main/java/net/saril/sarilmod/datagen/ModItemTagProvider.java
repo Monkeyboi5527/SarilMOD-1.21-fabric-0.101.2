@@ -59,5 +59,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ItemTags.PLANKS)
                 .add(ModBlocks.STELLAR_PLANKS.asItem());
+
+        getOrCreateTagBuilder(ModTags.Items.SOLAR_MATTER_REPAIR)
+                .add(ModItems.SOLAR_MATTER);
+
     }
 }

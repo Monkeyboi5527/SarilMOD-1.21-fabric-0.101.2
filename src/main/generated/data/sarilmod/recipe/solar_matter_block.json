@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "sarilmod:solar_matter"
-    }
+    "#": "sarilmod:solar_matter"
   },
   "pattern": [
     "###",

@@ -7,11 +7,7 @@ import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
 import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 import net.saril.sarilmod.block.ModBlocks;
-import net.saril.sarilmod.recipe.MatterStabilizerRecipe;
-import net.saril.sarilmod.recipe.ModRecipes;
 import net.saril.sarilmod.screen.custom.MatterStabilizerScreen;
-
-import java.awt.*;
 
 public class SarilModREIClient implements REIClientPlugin {
     @Override
@@ -23,8 +19,8 @@ public class SarilModREIClient implements REIClientPlugin {
 
     @Override
     public void registerDisplays(DisplayRegistry registry) {
-        registry.registerRecipeFiller(MatterStabilizerRecipe.class, ModRecipes.MATTER_STABILIZER_TYPE,
-                MatterStabilizerDisplay::new);
+//        registry.registerRecipeFiller(MatterStabilizerRecipe.class, ModRecipes.MATTER_STABILIZER_TYPE,
+//                MatterStabilizerDisplay::new);
     }
 
     @Override

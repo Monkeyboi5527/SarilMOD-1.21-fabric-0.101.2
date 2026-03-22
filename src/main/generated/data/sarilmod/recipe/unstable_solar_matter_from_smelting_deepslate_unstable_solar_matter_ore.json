@@ -4,9 +4,7 @@
   "cookingtime": 600,
   "experience": 0.5,
   "group": "solar_matter_from_smelting",
-  "ingredient": {
-    "item": "sarilmod:deepslate_unstable_solar_matter_ore"
-  },
+  "ingredient": "sarilmod:deepslate_unstable_solar_matter_ore",
   "result": {
     "id": "sarilmod:unstable_solar_matter"
   }

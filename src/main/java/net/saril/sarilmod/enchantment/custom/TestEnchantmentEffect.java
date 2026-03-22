@@ -52,7 +52,7 @@ public record TestEnchantmentEffect() implements EnchantmentEntityEffect{
                     new EnderDragonFight.Data(true,true,true,true,
                             Optional.ofNullable(user.getUuid()), Optional.of(user.getBlockPos()), Optional.of(new ArrayList<>()))));
             // This doesn't work either
-            player.sendMessage(Text.literal("This lowkey was supposed to spawn the EnderDragon or something but couldn't get it to work"));
+            player.sendMessage(Text.literal("This lowkey was supposed to spawn the EnderDragon or something but couldn't get it to work"), true);
 
 
         }

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": {
-      "item": "sarilmod:unstable_solar_matter"
-    }
+    "#": "sarilmod:unstable_solar_matter"
   },
   "pattern": [
     "###",

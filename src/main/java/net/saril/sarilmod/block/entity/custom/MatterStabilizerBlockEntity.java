@@ -6,7 +6,6 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.listener.ClientPlayPacketListener;
@@ -17,13 +16,13 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.saril.sarilmod.block.entity.ImplementedInventory;
 import net.saril.sarilmod.block.entity.ModBlockEntities;
-import net.saril.sarilmod.item.ModItems;
 import net.saril.sarilmod.recipe.MatterStabilizerRecipe;
 import net.saril.sarilmod.recipe.MatterStabilizerRecipeInput;
 import net.saril.sarilmod.recipe.ModRecipes;
@@ -179,7 +178,7 @@ public class MatterStabilizerBlockEntity extends BlockEntity implements Implemen
     }
 
     private Optional<RecipeEntry<MatterStabilizerRecipe>> getCurrentRecipe() {
-        return this.getWorld().getRecipeManager().
+        return ((ServerWorld) this.getWorld()).getRecipeManager().
                 getFirstMatch(ModRecipes.MATTER_STABILIZER_TYPE, new MatterStabilizerRecipeInput(inventory.get(INPUT_SLOT)), this.world);
     }
 

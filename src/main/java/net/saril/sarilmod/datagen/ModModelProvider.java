@@ -3,12 +3,15 @@ package net.saril.sarilmod.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Identifier;
+import net.saril.sarilmod.SarilMod;
 import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.block.custom.BananaBushBlock;
 import net.saril.sarilmod.block.custom.CauliflowerCropBlock;
 import net.saril.sarilmod.block.custom.SolarMatterLampBlock;
+import net.saril.sarilmod.item.ModArmorMaterials;
 import net.saril.sarilmod.item.ModItems;
 
 import java.util.Optional;
@@ -79,10 +82,15 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SOLAR_MATTER_HOE, Models.HANDHELD);
 //        itemModelGenerator.register(ModItems.SOLAR_MATTER_HAMMER, Models.HANDHELD);
 
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.SOLAR_MATTER_HELMET);
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.SOLAR_MATTER_CHESTPLATE);
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.SOLAR_MATTER_LEGGINGS);
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.SOLAR_MATTER_BOOTS);
+        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_HELMET, Identifier.of(SarilMod.MOD_ID, "solar_matter"),
+                ModArmorMaterials.SOLAR_MATTER, EquipmentSlot.HEAD);
+        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_CHESTPLATE, Identifier.of(SarilMod.MOD_ID, "solar_matter"),
+                ModArmorMaterials.SOLAR_MATTER, EquipmentSlot.CHEST);
+        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_LEGGINGS, Identifier.of(SarilMod.MOD_ID, "solar_matter"),
+                ModArmorMaterials.SOLAR_MATTER, EquipmentSlot.LEGS);
+        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_BOOTS, Identifier.of(SarilMod.MOD_ID, "solar_matter"),
+                ModArmorMaterials.SOLAR_MATTER, EquipmentSlot.FEET);
+
 
         itemModelGenerator.register(ModItems.SOLAR_MATTER_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.register(ModItems.SKL_SMITHING_TEMPLATE, Models.GENERATED);
