@@ -1,16 +1,18 @@
 package net.saril.sarilmod.datagen;
 
+import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.*;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ArmorItem;
+import net.minecraft.client.data.*;
+import net.minecraft.client.item.ItemAsset;
+import net.minecraft.client.render.item.model.ConditionItemModel;
+import net.minecraft.client.render.item.model.ItemModel;
+import net.minecraft.client.render.item.property.bool.HasComponentProperty;
 import net.minecraft.util.Identifier;
-import net.saril.sarilmod.SarilMod;
 import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.block.custom.BananaBushBlock;
 import net.saril.sarilmod.block.custom.CauliflowerCropBlock;
 import net.saril.sarilmod.block.custom.SolarMatterLampBlock;
+import net.saril.sarilmod.component.ModDataComponentTypes;
 import net.saril.sarilmod.item.ModArmorMaterials;
 import net.saril.sarilmod.item.ModItems;
 
@@ -51,7 +53,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerCrop(ModBlocks.CAULIFLOWER_CROP, CauliflowerCropBlock.AGE, 0, 1, 2, 3, 4, 5, 6);
 
-        blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.BANANA_BUSH_BLOCK, BlockStateModelGenerator.TintType.NOT_TINTED,
+        blockStateModelGenerator.registerTintableCrossBlockStateWithStages(ModBlocks.BANANA_BUSH_BLOCK, BlockStateModelGenerator.CrossType.NOT_TINTED,
                 BananaBushBlock.AGE, 0, 1, 2, 3);
 
 
@@ -60,7 +62,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.STELLAR_PLANKS);
         blockStateModelGenerator.registerSingleton(ModBlocks.STELLAR_LEAVES, TexturedModel.LEAVES);
-        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.STELLAR_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.STELLAR_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
 
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.CHAIR);
     }
@@ -82,15 +84,13 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SOLAR_MATTER_HOE, Models.HANDHELD);
 //        itemModelGenerator.register(ModItems.SOLAR_MATTER_HAMMER, Models.HANDHELD);
 
-        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_HELMET, Identifier.of(SarilMod.MOD_ID, "solar_matter"),
-                ModArmorMaterials.SOLAR_MATTER, EquipmentSlot.HEAD);
-        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_CHESTPLATE, Identifier.of(SarilMod.MOD_ID, "solar_matter"),
-                ModArmorMaterials.SOLAR_MATTER, EquipmentSlot.CHEST);
-        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_LEGGINGS, Identifier.of(SarilMod.MOD_ID, "solar_matter"),
-                ModArmorMaterials.SOLAR_MATTER, EquipmentSlot.LEGS);
-        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_BOOTS, Identifier.of(SarilMod.MOD_ID, "solar_matter"),
-                ModArmorMaterials.SOLAR_MATTER, EquipmentSlot.FEET);
+        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_HELMET, ModArmorMaterials.SOLAR_MATTER_KEY, "helmet", false);
+        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_CHESTPLATE, ModArmorMaterials.SOLAR_MATTER_KEY, "chestplate", false);
+        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_LEGGINGS, ModArmorMaterials.SOLAR_MATTER_KEY, "leggings", false);
+        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_BOOTS, ModArmorMaterials.SOLAR_MATTER_KEY, "boots", false);
 
+        itemModelGenerator.upload(ModItems.SOLAR_MATTER_BOW, Models.BOW);
+        itemModelGenerator.registerBow(ModItems.SOLAR_MATTER_BOW);
 
         itemModelGenerator.register(ModItems.SOLAR_MATTER_HORSE_ARMOR, Models.GENERATED);
         itemModelGenerator.register(ModItems.SKL_SMITHING_TEMPLATE, Models.GENERATED);
@@ -101,5 +101,11 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MANTIS_SPAWN_EGG,
                 new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
 
+        ItemModel.Unbaked unbakedChisel = ItemModels.basic(itemModelGenerator.upload(ModItems.CHISEL, Models.GENERATED));
+        ItemModel.Unbaked unbakedUsedChisel = ItemModels.basic(itemModelGenerator.registerSubModel(ModItems.CHISEL, "_used", Models.GENERATED));
+        itemModelGenerator.output.accept(ModItems.CHISEL,
+                new ItemAsset(new ConditionItemModel.Unbaked(new HasComponentProperty(ModDataComponentTypes.COORDINATES, false),
+                        unbakedUsedChisel, unbakedChisel),
+                        new ItemAsset.Properties(false)).model());
     }
 }

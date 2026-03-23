@@ -47,8 +47,6 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.TRIM_MATERIALS)
                 .add(ModItems.SOLAR_MATTER);
 
-        getOrCreateTagBuilder(ItemTags.TRIM_TEMPLATES)
-                .add(ModItems.SKL_SMITHING_TEMPLATE);
 
         getOrCreateTagBuilder(ItemTags.LOGS)
                 .add(ModBlocks.STELLAR_LOG.asItem())

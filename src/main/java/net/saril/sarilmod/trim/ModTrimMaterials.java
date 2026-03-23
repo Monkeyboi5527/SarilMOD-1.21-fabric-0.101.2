@@ -25,12 +25,12 @@ public class ModTrimMaterials {
 
     public static void bootstrap(Registerable<ArmorTrimMaterial> registerable) {
         register(registerable,SOLAR_MATTER, Registries.ITEM.getEntry(ModItems.SOLAR_MATTER),
-                Style.EMPTY.withColor(TextColor.parse("#b03f30").getOrThrow()), 0.6f);
+                Style.EMPTY.withColor(TextColor.parse("#b03f30").getOrThrow()));
     }
 
     private static void register(Registerable<ArmorTrimMaterial> registerable, RegistryKey<ArmorTrimMaterial> armorTrimKey,
-                                 RegistryEntry<Item> item, Style style, float itemModelIndex) {
-        ArmorTrimMaterial trimMaterial = new ArmorTrimMaterial(armorTrimKey.getValue().getPath(), item, itemModelIndex, Map.of(),
+                                 RegistryEntry<Item> item, Style style) {
+        ArmorTrimMaterial trimMaterial = new ArmorTrimMaterial(armorTrimKey.getValue().getPath(), item, Map.of(),
                 Text.translatable(Util.createTranslationKey("trim_material", armorTrimKey.getValue())).fillStyle(style));
 
         registerable.register(armorTrimKey, trimMaterial);

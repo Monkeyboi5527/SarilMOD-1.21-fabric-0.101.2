@@ -17,7 +17,6 @@ import net.saril.sarilmod.particle.ModParticles;
 import net.saril.sarilmod.particle.SolarMatterParticle;
 import net.saril.sarilmod.screen.ModScreenHandlers;
 import net.saril.sarilmod.screen.custom.MatterStabilizerScreen;
-import net.saril.sarilmod.util.ModModelPredicates;
 
 public class SarilModClient implements ClientModInitializer {
     @Override
@@ -28,8 +27,6 @@ public class SarilModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CAULIFLOWER_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BANANA_BUSH_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STELLAR_SAPLING, RenderLayer.getCutout());
-
-        ModModelPredicates.registerModelPredicates();
 
         EntityModelLayerRegistry.registerModelLayer(MantisModel.MANTIS, MantisModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.MANTIS, MantisRenderer::new);

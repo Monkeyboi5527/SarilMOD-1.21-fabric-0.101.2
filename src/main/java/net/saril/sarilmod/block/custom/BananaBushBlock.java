@@ -21,7 +21,7 @@ public class BananaBushBlock extends SweetBerryBushBlock {
 
 
     @Override
-    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state) {
+    public ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state, boolean b) {
             return new ItemStack(ModItems.BANANA);
     }
 
@@ -31,7 +31,8 @@ public class BananaBushBlock extends SweetBerryBushBlock {
         if (i > 1) {
             int j = 1 + world.random.nextInt(2);
             dropStack(world, pos, new ItemStack(ModItems.BANANA, j + (bl ? 1 : 0)));
-            world.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
+            world.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_SWEET_BERRY_BUSH_PICK_BERRIES,
+                    SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             BlockState blockState = (BlockState)state.with(AGE, 1);
             world.setBlockState(pos, blockState, 2);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
