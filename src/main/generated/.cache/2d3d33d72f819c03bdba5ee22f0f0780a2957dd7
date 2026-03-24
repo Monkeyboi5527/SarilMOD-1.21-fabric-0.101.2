@@ -1,4 +1,4 @@
-// 1.21.4	-999999999-01-01T00:00:00	SarilMOD/Model Definitions
+// 1.21.5	-999999999-01-01T00:00:00	SarilMOD/Model Definitions
 6227a25ada1aace321fa26f03340f98aea22e6fc assets/sarilmod/blockstates/banana_bush.json
 0bb0acaa8375fcf4ca444e3e4fe4fe30fb486452 assets/sarilmod/blockstates/cauliflower_crop.json
 a11a0a62c7ded6857157643e0964ce5450142fa6 assets/sarilmod/blockstates/chair.json
@@ -35,7 +35,6 @@ b6edc05c69863c27b3b1ed797660a9e36b13425e assets/sarilmod/items/cauliflower_seeds
 4be7179f3194b62db4b2f4a07e3d977d698a6d77 assets/sarilmod/items/fein_music_disc.json
 8ed5ecebfafcd5490cd2a5db474a20d382e7cf20 assets/sarilmod/items/magic_block.json
 63376acb82fe6973302871008aceb4619812a660 assets/sarilmod/items/mantis_spawn_egg.json
-274b57a0bb57903e1d0903ebfd0e4e118c1e91aa assets/sarilmod/items/matter_stabilizer.json
 d76e8f5009c904b52041120cacd24429a203c329 assets/sarilmod/items/skl_armor_smithing_template.json
 9f60e5542f2ee1fb9b7c207435fed3a135610764 assets/sarilmod/items/solar_matter.json
 b530f67a6d6f61f7ce793e39a28cb9e10b7692da assets/sarilmod/items/solar_matter_axe.json

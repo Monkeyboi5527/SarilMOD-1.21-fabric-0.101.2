@@ -18,6 +18,7 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
+import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -73,6 +74,12 @@ public class MatterStabilizerBlockEntity extends BlockEntity implements Implemen
         return inventory;
     }
 
+    @Override
+    public void onBlockReplaced(BlockPos pos, BlockState oldState) {
+        ItemScatterer.spawn(world, pos, (this));
+        super.onBlockReplaced(pos, oldState);
+    }
+
     private float rotation = 0;
     public float getRenderingRotation() {
         rotation += 0.7f;
@@ -94,8 +101,8 @@ public class MatterStabilizerBlockEntity extends BlockEntity implements Implemen
     protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         super.readNbt(nbt, registryLookup);
         Inventories.readNbt(nbt, inventory, registryLookup);
-        progress = nbt.getInt("matter_stabilizer.progress");
-        maxProgress = nbt.getInt("matter_stabilizer.max_progress");
+        progress = nbt.getInt("matter_stabilizer.progress").get();
+        maxProgress = nbt.getInt("matter_stabilizer.max_progress").get();
     }
 
     @Nullable

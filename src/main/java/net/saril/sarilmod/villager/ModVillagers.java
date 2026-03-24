@@ -8,6 +8,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.village.VillagerProfession;
 import net.minecraft.world.poi.PointOfInterestType;
@@ -18,12 +19,14 @@ public class ModVillagers {
     public static final RegistryKey<PointOfInterestType> SKL_POI_KEY = registerPoiKey("skl_poi");
     public static final PointOfInterestType SKL_POI = registerPOI("skl_poi", ModBlocks.CHAIR);
 
+    public static final RegistryKey<VillagerProfession> MONKEY_KEY =
+            RegistryKey.of(RegistryKeys.VILLAGER_PROFESSION, Identifier.of(SarilMod.MOD_ID, "skl"));
     public static final VillagerProfession MONKEY = registerProfession("monkey", SKL_POI_KEY);
 
 
     private static VillagerProfession registerProfession(String name, RegistryKey<PointOfInterestType> type) {
         return Registry.register(Registries.VILLAGER_PROFESSION, Identifier.of(SarilMod.MOD_ID, name),
-                new VillagerProfession(name, entry -> entry.matchesKey(type), entry -> entry.matchesKey(type),
+                new VillagerProfession(Text.literal("Monkey"), entry -> entry.matchesKey(type), entry -> entry.matchesKey(type),
                         ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ENTITY_VILLAGER_WORK_LIBRARIAN));
     }
 

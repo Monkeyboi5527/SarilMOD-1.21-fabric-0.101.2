@@ -1,6 +1,7 @@
 package net.saril.sarilmod.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.item.*;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.item.tooltip.TooltipType;
@@ -16,11 +17,10 @@ import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.entity.ModEntities;
 import net.saril.sarilmod.item.custom.ChiselItem;
 import net.saril.sarilmod.item.custom.HammerItem;
-import net.saril.sarilmod.item.custom.ModArmorItem;
 import net.saril.sarilmod.item.custom.TomahawkItem;
 import net.saril.sarilmod.sound.ModSounds;
 
-import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class ModItems {
@@ -33,19 +33,20 @@ public class ModItems {
     public static final Item BANANA = registerItem("banana", setting -> new BlockItem(ModBlocks.BANANA_BUSH_BLOCK,
             setting.food(ModFoodComponents.BANANA, ModFoodComponents.BANANA_EFFECT)){
         @Override
-        public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-            tooltip.add(Text.translatable("tooltip.sarilmod.banana"));
-            super.appendTooltip(stack, context, tooltip, type);
+        public void appendTooltip(ItemStack stack, Item.TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
+            textConsumer.accept(Text.translatable("tooltip.sarilmod.banana"));
+            super.appendTooltip(stack, context, displayComponent, textConsumer, type);
         }
     });
 
     public static final Item DARK_CRYSTAL = registerItem("dark_crystal", setting -> new Item(setting));
 
     public static final Item SOLAR_MATTER_SWORD = registerItem("solar_matter_sword",
-            setting -> new SwordItem(ModToolMaterials.SOLAR_MATTER, 10, -3.0f, setting.rarity(Rarity.EPIC).fireproof()));
+            setting -> new Item(setting.sword(ModToolMaterials.SOLAR_MATTER, 10, -3.0f)
+                    .rarity(Rarity.EPIC).fireproof()));
 
     public static final Item SOLAR_MATTER_PICKAXE = registerItem("solar_matter_pickaxe",
-            setting -> new PickaxeItem(ModToolMaterials.SOLAR_MATTER, 1, -2.8f, setting.rarity(Rarity.EPIC)));
+            setting -> new Item(setting.pickaxe(ModToolMaterials.SOLAR_MATTER, 1, -2.8f).rarity(Rarity.EPIC)));
 
     public static final Item SOLAR_MATTER_SHOVEL = registerItem("solar_matter_shovel",
             setting -> new ShovelItem(ModToolMaterials.SOLAR_MATTER, 1.5f, -3.0f, setting.rarity(Rarity.EPIC)));
@@ -57,28 +58,28 @@ public class ModItems {
             setting -> new HoeItem(ModToolMaterials.SOLAR_MATTER, 0, -3.0f, setting.rarity(Rarity.EPIC)));
 
     public static final Item SOLAR_MATTER_HAMMER = registerItem("solar_matter_hammer",
-            setting -> new HammerItem(ModToolMaterials.SOLAR_MATTER, 7, -3.0f, setting.rarity(Rarity.EPIC)));
+            setting -> new HammerItem(ModToolMaterials.SOLAR_MATTER, 36, -3.0f, setting.rarity(Rarity.EPIC)));
 
     public static final Item SOLAR_MATTER_HELMET = registerItem("solar_matter_helmet",
-            setting -> new ArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.HELMET, setting
+            setting -> new Item(setting.armor(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.HELMET)
                     .maxDamage(EquipmentType.HELMET.getMaxDamage(15))
                     .rarity(Rarity.EPIC)
                     .fireproof()));
 
     public static final Item SOLAR_MATTER_CHESTPLATE = registerItem("solar_matter_chestplate",
-            setting -> new ModArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.CHESTPLATE, setting
+            setting -> new Item(setting.armor(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)
                     .maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(15))
                     .rarity(Rarity.EPIC)
                     .fireproof()));
 
     public static final Item SOLAR_MATTER_LEGGINGS = registerItem("solar_matter_leggings",
-            setting -> new ArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.LEGGINGS, setting
+            setting -> new Item(setting.armor(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.LEGGINGS)
                     .maxDamage(EquipmentType.LEGGINGS.getMaxDamage(15))
                     .rarity(Rarity.EPIC)
                     .fireproof()));
 
     public static final Item SOLAR_MATTER_BOOTS = registerItem("solar_matter_boots",
-            setting -> new ArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.BOOTS, setting
+            setting -> new Item(setting.armor(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.BOOTS)
                     .maxDamage(EquipmentType.BOOTS.getMaxDamage(15))
                     .rarity(Rarity.EPIC)
                     .fireproof()));
@@ -87,8 +88,7 @@ public class ModItems {
             setting -> new BowItem(setting.maxDamage(500)));
 
     public static final Item SOLAR_MATTER_HORSE_ARMOR = registerItem("solar_matter_horse_armor",
-            setting -> new AnimalArmorItem(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, AnimalArmorItem.Type.EQUESTRIAN,
-                    setting.maxCount(1)));
+            setting -> new Item(setting.horseArmor(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL).maxCount(1)));
 
     public static final Item SKL_SMITHING_TEMPLATE = registerItem("skl_armor_smithing_template",
             SmithingTemplateItem::of);

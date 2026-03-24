@@ -7,6 +7,7 @@ import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -117,7 +118,7 @@ public class ModBlocks {
             properties -> new Block(properties.strength(2f).sounds(BlockSoundGroup.WOOD)));
 
     public static final Block STELLAR_LEAVES = registerBlock("stellar_leaves",
-            properties -> new LeavesBlock(properties
+            properties -> new UntintedParticleLeavesBlock(0.02f, ParticleTypes.CHERRY_LEAVES,properties
                     .mapColor(MapColor.DARK_GREEN).strength(0.2F).ticksRandomly()
                     .sounds(BlockSoundGroup.GRASS).nonOpaque()
                     .allowsSpawning(Blocks::canSpawnOnLeaves).suffocates(Blocks::never)

@@ -1,4 +1,4 @@
-// 1.21.4	-999999999-01-01T00:00:00	SarilMOD/SarilMod Recipes
+// 1.21.5	-999999999-01-01T00:00:00	SarilMOD/SarilMod Recipes
 c607c25a1ec8d1b9e4dd5d5d7b085c6ebb146a2c data/sarilmod/advancement/recipes/building_blocks/solar_matter.json
 6ace3a1b36bc2fc5332908113c6a089ea522bd06 data/sarilmod/advancement/recipes/building_blocks/unstable_solar_matter.json
 12d6cdd5e199ffd1f68826a0df790e705aa1b384 data/sarilmod/advancement/recipes/decorations/solar_matter_block.json
@@ -12,7 +12,7 @@ fd4a0251c4688c45e64ea3b7f75d6f6ebdce23e6 data/sarilmod/advancement/recipes/misc/
 ed03520d9224251086ff4f9f6b626c19e9243aee data/sarilmod/advancement/recipes/misc/unstable_solar_matter_from_smelting_unstable_solar_matter.json
 fd1ae4fc4a331e3c84e12abf4fdbe2bb776c482f data/sarilmod/advancement/recipes/misc/unstable_solar_matter_from_smelting_unstable_solar_matter_ore.json
 eb6a8ac3b361812c29bcb79bf2f2117090a9c50b data/sarilmod/recipe/chisel.json
-bcb3f5994377b4c912a3f9c6814c1b06e9cec6a3 data/sarilmod/recipe/skl.json
+5412d11d05a0ef046bffe14c0d09410358058c87 data/sarilmod/recipe/skl.json
 8b6c7d8d90df91a5c85882376ba60929f1172bd6 data/sarilmod/recipe/solar_matter.json
 b26c8ac08c2ac32ae61be2a4a15444fcaadbde9c data/sarilmod/recipe/solar_matter_block.json
 f5f281cf4b4123803ca50211cba4830cc8acdc4a data/sarilmod/recipe/unstable_solar_matter.json

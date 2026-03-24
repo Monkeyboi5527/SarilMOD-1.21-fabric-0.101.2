@@ -14,6 +14,7 @@ import net.minecraft.util.Identifier;
 import net.saril.sarilmod.SarilMod;
 import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.item.ModItems;
+import net.saril.sarilmod.trim.ModTrimPatterns;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -66,8 +67,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                         .offerTo(exporter);
 
-                offerSmithingTrimRecipe(ModItems.SKL_SMITHING_TEMPLATE, RegistryKey.of(RegistryKeys.RECIPE,
-                        Identifier.of(SarilMod.MOD_ID, "skl")));
+                offerSmithingTrimRecipe(ModItems.SKL_SMITHING_TEMPLATE, ModTrimPatterns.SKL,
+                        RegistryKey.of(RegistryKeys.RECIPE, Identifier.of(SarilMod.MOD_ID, "skl")));
 
 
             }

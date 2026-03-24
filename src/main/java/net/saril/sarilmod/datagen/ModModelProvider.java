@@ -7,7 +7,10 @@ import net.minecraft.client.item.ItemAsset;
 import net.minecraft.client.render.item.model.ConditionItemModel;
 import net.minecraft.client.render.item.model.ItemModel;
 import net.minecraft.client.render.item.property.bool.HasComponentProperty;
+import net.minecraft.client.render.model.json.ModelVariant;
+import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.collection.Pool;
 import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.block.custom.BananaBushBlock;
 import net.saril.sarilmod.block.custom.CauliflowerCropBlock;
@@ -48,8 +51,11 @@ public class ModModelProvider extends FabricModelProvider {
 
         Identifier lampOffIdentifier = TexturedModel.CUBE_ALL.upload(ModBlocks.SOLAR_MATTER_LAMP, blockStateModelGenerator.modelCollector);
         Identifier lampOnIdentifier = blockStateModelGenerator.createSubModel(ModBlocks.SOLAR_MATTER_LAMP, "_on", Models.CUBE_ALL, TextureMap::all);
-        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(ModBlocks.SOLAR_MATTER_LAMP)
-                .coordinate(BlockStateModelGenerator.createBooleanModelMap(SolarMatterLampBlock.CLICKED, lampOnIdentifier, lampOffIdentifier)));
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockModelDefinitionCreator.of(ModBlocks.SOLAR_MATTER_LAMP)
+                .with(BlockStateModelGenerator.createBooleanModelMap(SolarMatterLampBlock.CLICKED,
+                        new WeightedVariant(Pool.<ModelVariant>builder().add(new ModelVariant(lampOnIdentifier)).build()),
+                        new WeightedVariant(Pool.<ModelVariant>builder().add(new ModelVariant(lampOffIdentifier)).build()))));
+
 
         blockStateModelGenerator.registerCrop(ModBlocks.CAULIFLOWER_CROP, CauliflowerCropBlock.AGE, 0, 1, 2, 3, 4, 5, 6);
 
@@ -57,8 +63,8 @@ public class ModModelProvider extends FabricModelProvider {
                 BananaBushBlock.AGE, 0, 1, 2, 3);
 
 
-        blockStateModelGenerator.registerLog(ModBlocks.STELLAR_LOG).log(ModBlocks.STELLAR_LOG).wood(ModBlocks.STELLAR_WOOD);
-        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_STELLAR_LOG).log(ModBlocks.STRIPPED_STELLAR_LOG).wood(ModBlocks.STRIPPED_STELLAR_WOOD);
+        blockStateModelGenerator.createLogTexturePool(ModBlocks.STELLAR_LOG).log(ModBlocks.STELLAR_LOG).wood(ModBlocks.STELLAR_WOOD);
+        blockStateModelGenerator.createLogTexturePool(ModBlocks.STRIPPED_STELLAR_LOG).log(ModBlocks.STRIPPED_STELLAR_LOG).wood(ModBlocks.STRIPPED_STELLAR_WOOD);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.STELLAR_PLANKS);
         blockStateModelGenerator.registerSingleton(ModBlocks.STELLAR_LEAVES, TexturedModel.LEAVES);
@@ -84,10 +90,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.SOLAR_MATTER_HOE, Models.HANDHELD);
 //        itemModelGenerator.register(ModItems.SOLAR_MATTER_HAMMER, Models.HANDHELD);
 
-        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_HELMET, ModArmorMaterials.SOLAR_MATTER_KEY, "helmet", false);
-        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_CHESTPLATE, ModArmorMaterials.SOLAR_MATTER_KEY, "chestplate", false);
-        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_LEGGINGS, ModArmorMaterials.SOLAR_MATTER_KEY, "leggings", false);
-        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_BOOTS, ModArmorMaterials.SOLAR_MATTER_KEY, "boots", false);
+        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_HELMET, ModArmorMaterials.SOLAR_MATTER_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_CHESTPLATE, ModArmorMaterials.SOLAR_MATTER_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_LEGGINGS, ModArmorMaterials.SOLAR_MATTER_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+        itemModelGenerator.registerArmor(ModItems.SOLAR_MATTER_BOOTS, ModArmorMaterials.SOLAR_MATTER_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
 
         itemModelGenerator.upload(ModItems.SOLAR_MATTER_BOW, Models.BOW);
         itemModelGenerator.registerBow(ModItems.SOLAR_MATTER_BOW);

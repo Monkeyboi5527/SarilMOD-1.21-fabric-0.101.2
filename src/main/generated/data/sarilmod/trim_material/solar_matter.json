@@ -3,6 +3,5 @@
   "description": {
     "color": "#B03F30",
     "translate": "trim_material.sarilmod.solar_matter"
-  },
-  "ingredient": "sarilmod:solar_matter"
+  }
 }

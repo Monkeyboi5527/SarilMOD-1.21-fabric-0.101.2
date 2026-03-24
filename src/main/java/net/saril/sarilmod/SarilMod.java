@@ -15,6 +15,7 @@ import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Identifier;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradedItem;
 import net.minecraft.village.VillagerProfession;
@@ -96,7 +97,7 @@ public class SarilMod implements ModInitializer {
 						new ItemStack(ModItems.BANANA, 1), 7, 2, 0.6f)
 				)));
 
-		TradeOfferHelper.registerVillagerOffers(ModVillagers.MONKEY, 1, factories -> {
+		TradeOfferHelper.registerVillagerOffers(ModVillagers.MONKEY_KEY, 1, factories -> {
 				factories.add(((entity, random) -> new TradeOffer(
 						new TradedItem(Items.EMERALD, 3),
 						new ItemStack(ModItems.BANANA, 4), 7, 2, 0.6f)));
@@ -105,7 +106,7 @@ public class SarilMod implements ModInitializer {
 
 			});
 
-		TradeOfferHelper.registerVillagerOffers(ModVillagers.MONKEY, 2, factories -> {
+		TradeOfferHelper.registerVillagerOffers(ModVillagers.MONKEY_KEY, 2, factories -> {
 			factories.add(((entity, random) -> new TradeOffer(
 					new TradedItem(Items.EMERALD, 15),
 					new ItemStack(ModItems.CHISEL, 1), 3, 5, 0.12f)));
@@ -117,11 +118,10 @@ public class SarilMod implements ModInitializer {
 
 		});
 
-		TradeOfferHelper.registerWanderingTraderOffers( 1, factories ->
-				factories.add(((entity, random) -> new TradeOffer(
+		TradeOfferHelper.registerWanderingTraderOffers( factories ->
+				factories.addAll(Identifier.of(SarilMod.MOD_ID, "emerald_for_chisel"), (entity, random) -> new TradeOffer(
 						new TradedItem(Items.EMERALD, 128),
-						new ItemStack(ModItems.TOMAHAWK, 1), 1, 2000, 0.6f)
-				)));
+						new ItemStack(ModItems.TOMAHAWK, 1), 4, 2000, 20)));
 
 		ModParticles.registerParticles();
 		ModLootTableModifiers.modifyLootTables();

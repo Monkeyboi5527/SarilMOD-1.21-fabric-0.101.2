@@ -3,7 +3,11 @@ package net.saril.sarilmod.item.custom;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
@@ -13,17 +17,18 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.component.ModDataComponentTypes;
 import net.saril.sarilmod.particle.ModParticles;
 import net.saril.sarilmod.sound.ModSounds;
 
-import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 public class ChiselItem extends Item {
 
@@ -44,8 +49,8 @@ public class ChiselItem extends Item {
         World world = context.getWorld();
         Block clickedBlock = world.getBlockState(context.getBlockPos()).getBlock();
 
-        if(CHISEL_MAP.containsKey(clickedBlock)) {
-            if(!world.isClient()) {
+        if (CHISEL_MAP.containsKey(clickedBlock)) {
+            if (!world.isClient()) {
                 world.setBlockState(context.getBlockPos(), CHISEL_MAP.get(clickedBlock).getDefaultState());
 
                 context.getStack().damage(1, ((ServerWorld) world), ((ServerPlayerEntity) context.getPlayer()),
@@ -54,8 +59,8 @@ public class ChiselItem extends Item {
                 world.playSound(null, context.getBlockPos(), ModSounds.CHISEL_USE, SoundCategory.BLOCKS);
 
                 ((ServerWorld) world).spawnParticles(new BlockStateParticleEffect(ParticleTypes.BLOCK, clickedBlock.getDefaultState()),
-                        context.getBlockPos().getX() + 0.5, context.getBlockPos().getY()+1,
-                        context.getBlockPos().getZ() + 0.5, 5,0,0,0,1);
+                        context.getBlockPos().getX() + 0.5, context.getBlockPos().getY() + 1,
+                        context.getBlockPos().getZ() + 0.5, 5, 0, 0, 0, 1);
 
                 ((ServerWorld) world).spawnParticles(ParticleTypes.LAVA,
                         context.getBlockPos().getX() + 0.5, context.getBlockPos().getY() + 1.5,
@@ -76,16 +81,31 @@ public class ChiselItem extends Item {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+    public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
         if (Screen.hasShiftDown()) {
-            tooltip.add(Text.translatable("tooltip.sarilmod.chisel.tooltip.shift_down"));
+            textConsumer.accept(Text.translatable("tooltip.sarilmod.chisel.tooltip.shift_down"));
         } else {
-            tooltip.add(Text.translatable("tooltip.sarilmod.chisel.tooltip"));
+            textConsumer.accept(Text.translatable("tooltip.sarilmod.chisel.tooltip"));
         }
 
-        if(stack.get(ModDataComponentTypes.COORDINATES) != null) {
-            tooltip.add(Text.literal("Last Block Changed at " + stack.get(ModDataComponentTypes.COORDINATES)));
+        if (stack.get(ModDataComponentTypes.COORDINATES) != null) {
+
+            textConsumer.accept(Text.literal("Last Block Changed at " + stack.get(ModDataComponentTypes.COORDINATES)));
         }
-        super.appendTooltip(stack, context, tooltip, type);
+        super.appendTooltip(stack, context, displayComponent, textConsumer, type);
+
     }
+
+    int counter = 1;
+    int chanceToAddLevitation = MathHelper.nextInt(Random.create(), 1, 5);
+    @Override
+    public void postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        if(counter <= chanceToAddLevitation) {
+            target.addStatusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 50, 0), attacker);
+            counter = 1;
+        } else {
+            counter++;
+        }
+    }
+
 }
