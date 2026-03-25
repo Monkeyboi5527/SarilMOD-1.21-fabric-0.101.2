@@ -20,45 +20,45 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ModTags.Items.TRANSFORMABLE_ITEMS)
+        valueLookupBuilder(ModTags.Items.TRANSFORMABLE_ITEMS)
             .add(ModItems.SOLAR_MATTER)
             .add(ModItems.UNSTABLE_SOLAR_MATTER)
             .add(Items.STICK)
             .add(Items.MACE)
             .add(Items.APPLE);
 
-        getOrCreateTagBuilder(ItemTags.SWORDS)
+        valueLookupBuilder(ItemTags.SWORDS)
                 .add(ModItems.SOLAR_MATTER_SWORD);
-        getOrCreateTagBuilder(ItemTags.PICKAXES)
+        valueLookupBuilder(ItemTags.PICKAXES)
                 .add(ModItems.SOLAR_MATTER_PICKAXE);
-        getOrCreateTagBuilder(ItemTags.SHOVELS)
+        valueLookupBuilder(ItemTags.SHOVELS)
                 .add(ModItems.SOLAR_MATTER_SHOVEL);
-        getOrCreateTagBuilder(ItemTags.AXES)
+        valueLookupBuilder(ItemTags.AXES)
                 .add(ModItems.SOLAR_MATTER_AXE);
-        getOrCreateTagBuilder(ItemTags.HOES)
+        valueLookupBuilder(ItemTags.HOES)
                 .add(ModItems.SOLAR_MATTER_HOE);
 
-        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+        valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.SOLAR_MATTER_HELMET)
                 .add(ModItems.SOLAR_MATTER_CHESTPLATE)
                 .add(ModItems.SOLAR_MATTER_LEGGINGS)
                 .add(ModItems.SOLAR_MATTER_BOOTS);
 
-        getOrCreateTagBuilder(ItemTags.TRIM_MATERIALS)
+        valueLookupBuilder(ItemTags.TRIM_MATERIALS)
                 .add(ModItems.SOLAR_MATTER);
 
 
-        getOrCreateTagBuilder(ItemTags.LOGS)
+        valueLookupBuilder(ItemTags.LOGS)
                 .add(ModBlocks.STELLAR_LOG.asItem())
                 .add(ModBlocks.STELLAR_WOOD.asItem())
                 .add(ModBlocks.STRIPPED_STELLAR_LOG.asItem())
                 .add(ModBlocks.STRIPPED_STELLAR_WOOD.asItem());
 
 
-        getOrCreateTagBuilder(ItemTags.PLANKS)
+        valueLookupBuilder(ItemTags.PLANKS)
                 .add(ModBlocks.STELLAR_PLANKS.asItem());
 
-        getOrCreateTagBuilder(ModTags.Items.SOLAR_MATTER_REPAIR)
+        valueLookupBuilder(ModTags.Items.SOLAR_MATTER_REPAIR)
                 .add(ModItems.SOLAR_MATTER);
 
     }

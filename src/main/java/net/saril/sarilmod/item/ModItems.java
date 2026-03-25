@@ -26,7 +26,7 @@ import java.util.function.Function;
 public class ModItems {
 
     public static final Item SOLAR_MATTER = registerItem("solar_matter", Item::new);
-    public static final Item UNSTABLE_SOLAR_MATTER = registerItem("unstable_solar_matter", setting -> new Item(setting));
+    public static final Item UNSTABLE_SOLAR_MATTER = registerItem("unstable_solar_matter", Item::new);
 
     public static final Item CHISEL = registerItem("chisel", setting -> new ChiselItem(setting.maxDamage(32)));
 
@@ -39,7 +39,7 @@ public class ModItems {
         }
     });
 
-    public static final Item DARK_CRYSTAL = registerItem("dark_crystal", setting -> new Item(setting));
+    public static final Item DARK_CRYSTAL = registerItem("dark_crystal", Item::new);
 
     public static final Item SOLAR_MATTER_SWORD = registerItem("solar_matter_sword",
             setting -> new Item(setting.sword(ModToolMaterials.SOLAR_MATTER, 10, -3.0f)

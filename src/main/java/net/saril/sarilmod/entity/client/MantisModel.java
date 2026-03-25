@@ -1,6 +1,7 @@
 package net.saril.sarilmod.entity.client;
 
 import net.minecraft.client.model.*;
+import net.minecraft.client.render.entity.animation.Animation;
 import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
@@ -13,11 +14,17 @@ public class MantisModel extends EntityModel<MantisRenderState> {
     private final ModelPart mantis;
     private final ModelPart head;
 
+    private final Animation walkingAnimation;
+    private final Animation idlingAnimation;
+
     public MantisModel(ModelPart root) {
         super(root);
         this.root = root.getChild("root");
         this.mantis = this.root.getChild("mantis");
         this.head = this.mantis.getChild("head");
+
+        this.walkingAnimation = MantisAnimations.ANIM_MANTIS_WALK.createAnimation(root);
+        this.idlingAnimation = MantisAnimations.ANIM_MANTIS_IDLE.createAnimation(root);
     }
 
     public static TexturedModelData getTexturedModelData() {
@@ -100,8 +107,8 @@ public class MantisModel extends EntityModel<MantisRenderState> {
         super.setAngles(state);
         this.setHeadAngles(state.relativeHeadYaw, state.pitch);
 
-        this.animateWalking(MantisAnimations.ANIM_MANTIS_WALK, state.limbSwingAnimationProgress, state.limbSwingAmplitude, 2f, 2.5f);
-        this.animate(state.idleAnimationState, MantisAnimations.ANIM_MANTIS_IDLE, state.age, 1f);
+        this.walkingAnimation.applyWalking(state.limbSwingAnimationProgress, state.limbSwingAmplitude, 2f, 2.5f);
+        this.idlingAnimation.apply(state.idleAnimationState, state.age, 1f);
     }
 
     private void setHeadAngles(float headYaw, float headPitch) {

@@ -25,6 +25,8 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.storage.ReadView;
+import net.minecraft.storage.WriteView;
 import net.minecraft.text.Text;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
@@ -123,16 +125,18 @@ public class MantisEntity extends AnimalEntity {
     }
 
     @Override
-    public void writeCustomDataToNbt(NbtCompound nbt) {
-        super.writeCustomDataToNbt(nbt);
-        nbt.putInt("Variant", this.getTypeVariant());
+    public void writeData(WriteView view) {
+        super.writeData(view);
+        view.putInt("Variant", this.getTypeVariant());
     }
 
     @Override
-    public void readCustomDataFromNbt(NbtCompound nbt) {
-        super.readCustomDataFromNbt(nbt);
-        this.dataTracker.set(DATA_ID_TYPE_VARIANT, nbt.getInt("Variant").get());
+    public void readData(ReadView view) {
+        super.readData(view);
+        this.dataTracker.set(DATA_ID_TYPE_VARIANT, view.getInt("Variant", 0));
     }
+
+
 
     @Override
     public EntityData initialize(ServerWorldAccess world,  LocalDifficulty difficulty, SpawnReason spawnReason,

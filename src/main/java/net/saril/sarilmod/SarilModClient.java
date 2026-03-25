@@ -1,11 +1,12 @@
 package net.saril.sarilmod;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
+import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.saril.sarilmod.block.ModBlocks;
@@ -21,12 +22,12 @@ import net.saril.sarilmod.screen.custom.MatterStabilizerScreen;
 public class SarilModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SOLAR_MATTER_DOOR, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SOLAR_MATTER_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.putBlock(ModBlocks.SOLAR_MATTER_DOOR, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.SOLAR_MATTER_TRAPDOOR, BlockRenderLayer.CUTOUT);
 
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CAULIFLOWER_CROP, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BANANA_BUSH_BLOCK, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STELLAR_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.putBlock(ModBlocks.CAULIFLOWER_CROP, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.BANANA_BUSH_BLOCK, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.STELLAR_SAPLING, BlockRenderLayer.CUTOUT);
 
         EntityModelLayerRegistry.registerModelLayer(MantisModel.MANTIS, MantisModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.MANTIS, MantisRenderer::new);
@@ -40,5 +41,6 @@ public class SarilModClient implements ClientModInitializer {
 
         BlockEntityRendererFactories.register(ModBlockEntities.MATTER_STABILIZER_BE, MatterStabilizerBlockEntityRenderer::new);
         HandledScreens.register(ModScreenHandlers.MATTER_STABILIZER_SCREEN_HANDLER, MatterStabilizerScreen::new);
+        BlockRenderLayerMap.putBlock(ModBlocks.MATTER_STABILIZER, BlockRenderLayer.CUTOUT);
     }
 }

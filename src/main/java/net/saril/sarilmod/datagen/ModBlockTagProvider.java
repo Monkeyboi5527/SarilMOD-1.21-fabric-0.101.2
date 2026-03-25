@@ -16,7 +16,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+        valueLookupBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.SOLAR_MATTER_BLOCK)
                 .add(ModBlocks.UNSTABLE_SOLAR_MATTER_BLOCK)
                 .add(ModBlocks.UNSTABLE_SOLAR_MATTER_ORE)
@@ -24,21 +24,21 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MAGIC_BLOCK);
 
 
-        getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
+        valueLookupBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.SOLAR_MATTER_BLOCK)
                 .add(ModBlocks.UNSTABLE_SOLAR_MATTER_BLOCK)
                 .add(ModBlocks.UNSTABLE_SOLAR_MATTER_ORE)
                 .add(ModBlocks.DEEPSLATE_UNSTABLE_SOLAR_MATTER_ORE);
 
-        getOrCreateTagBuilder(BlockTags.FENCE_GATES).add(ModBlocks.SOLAR_MATTER_FENCE);
-        getOrCreateTagBuilder(BlockTags.FENCES).add(ModBlocks.SOLAR_MATTER_FENCE_GATE);
-        getOrCreateTagBuilder(BlockTags.WALLS).add(ModBlocks.SOLAR_MATTER_WALL);
+        valueLookupBuilder(BlockTags.FENCE_GATES).add(ModBlocks.SOLAR_MATTER_FENCE);
+        valueLookupBuilder(BlockTags.FENCES).add(ModBlocks.SOLAR_MATTER_FENCE_GATE);
+        valueLookupBuilder(BlockTags.WALLS).add(ModBlocks.SOLAR_MATTER_WALL);
 
-        getOrCreateTagBuilder(ModTags.Blocks.NEEDS_SOLAR_MATTER_TOOl)
+        valueLookupBuilder(ModTags.Blocks.NEEDS_SOLAR_MATTER_TOOl)
                 .add(ModBlocks.MAGIC_BLOCK)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
 
-        getOrCreateTagBuilder(BlockTags.LOGS)
+        valueLookupBuilder(BlockTags.LOGS)
                 .add(ModBlocks.STELLAR_LOG)
                 .add(ModBlocks.STELLAR_WOOD)
                 .add(ModBlocks.STRIPPED_STELLAR_LOG)

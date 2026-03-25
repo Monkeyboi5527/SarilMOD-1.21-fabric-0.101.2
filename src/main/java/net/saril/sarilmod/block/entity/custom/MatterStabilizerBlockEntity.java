@@ -17,6 +17,8 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.storage.ReadView;
+import net.minecraft.storage.WriteView;
 import net.minecraft.text.Text;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
@@ -90,20 +92,22 @@ public class MatterStabilizerBlockEntity extends BlockEntity implements Implemen
     }
 
     @Override
-    protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        super.writeNbt(nbt, registryLookup);
-        Inventories.writeNbt(nbt, inventory, registryLookup);
-        nbt.putInt("matter_stabilizer.progress", progress);
-        nbt.putInt("matter_stabilizer.max_progress", maxProgress);
+    protected void writeData(WriteView view) {
+        super.writeData(view);
+        Inventories.writeData(view, inventory);
+        view.putInt("matter_stabilizer.progress", progress);
+        view.putInt("matter_stabilizer.max_progress", maxProgress);
     }
 
     @Override
-    protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        super.readNbt(nbt, registryLookup);
-        Inventories.readNbt(nbt, inventory, registryLookup);
-        progress = nbt.getInt("matter_stabilizer.progress").get();
-        maxProgress = nbt.getInt("matter_stabilizer.max_progress").get();
+    protected void readData(ReadView view) {
+        super.readData(view);
+        Inventories.readData(view, inventory);
+        progress = view.getInt("matter_stabilizer.progress", 0);
+        maxProgress = view.getInt("matter_stabilizer.max_progress", 0);
     }
+
+
 
     @Nullable
     @Override
