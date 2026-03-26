@@ -2,7 +2,7 @@ package net.saril.sarilmod.item.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.component.type.TooltipDisplayComponent;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -82,7 +82,7 @@ public class ChiselItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, TooltipDisplayComponent displayComponent, Consumer<Text> textConsumer, TooltipType type) {
-        if (Screen.hasShiftDown()) {
+        if (MinecraftClient.getInstance().isShiftPressed()) {
             textConsumer.accept(Text.translatable("tooltip.sarilmod.chisel.tooltip.shift_down"));
         } else {
             textConsumer.accept(Text.translatable("tooltip.sarilmod.chisel.tooltip"));

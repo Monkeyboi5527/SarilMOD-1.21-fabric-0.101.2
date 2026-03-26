@@ -58,7 +58,7 @@ public class SarilMod implements ModInitializer {
 		});
 
 		AttackEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
-			if(entity instanceof SheepEntity sheepEntity && world.isClient) {
+			if(entity instanceof SheepEntity sheepEntity && world.isClient()) {
 				if(player.getMainHandStack().getItem() == Items.END_ROD) {
 					player.sendMessage(Text.literal("ayo? sussy baka"), true);
 					player.getMainHandStack().decrement(1);

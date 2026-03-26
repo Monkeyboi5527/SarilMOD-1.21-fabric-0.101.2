@@ -19,7 +19,6 @@ import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -87,7 +86,7 @@ public class MantisEntity extends AnimalEntity {
     public void tick() {
         super.tick();
 
-        if (this.getWorld().isClient()) {
+        if (this.getEntityWorld().isClient()) {
             this.setupAnimationStates();
         }
     }

@@ -22,7 +22,7 @@ public record MatterStabilizerRecipe(Ingredient inputItem, ItemStack output) imp
 
     @Override
     public boolean matches(MatterStabilizerRecipeInput input, World world) {
-        if (world.isClient) {
+        if (world.isClient()) {
             return false;
         }
 

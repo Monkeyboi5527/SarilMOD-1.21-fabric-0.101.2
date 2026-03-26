@@ -19,7 +19,7 @@ public class TomahawkItem extends Item {
     public ActionResult use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
-        if (!world.isClient) {
+        if (!world.isClient()) {
             TomahawkProjectileEntity tomahawk = new TomahawkProjectileEntity(world, user);
             tomahawk.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 1.5f, 0f);
             world.spawnEntity(tomahawk);

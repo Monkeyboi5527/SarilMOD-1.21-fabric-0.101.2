@@ -20,7 +20,7 @@ public record TestEnchantmentEffect() implements EnchantmentEntityEffect{
 
         World.ExplosionSourceType sourceType = World.ExplosionSourceType.TNT;
 
-        if(world.isClient) {
+        if(world.isClient()) {
             world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 3f, sourceType);
         }
         if (level == 1){
