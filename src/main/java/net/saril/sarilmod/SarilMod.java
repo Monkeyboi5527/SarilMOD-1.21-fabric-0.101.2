@@ -92,13 +92,13 @@ public class SarilMod implements ModInitializer {
 		ModVillagers.registerVillagers();
 
 		TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1, factories ->
-				factories.add(((entity, random) -> new TradeOffer(
+				factories.add(((world,entity, random) -> new TradeOffer(
 						new TradedItem(Items.EMERALD, 3),
 						new ItemStack(ModItems.BANANA, 1), 7, 2, 0.6f)
 				)));
 
 		TradeOfferHelper.registerVillagerOffers(ModVillagers.MONKEY_KEY, 1, factories -> {
-				factories.add(((entity, random) -> new TradeOffer(
+				factories.add(((world,entity, random) -> new TradeOffer(
 						new TradedItem(Items.EMERALD, 3),
 						new ItemStack(ModItems.BANANA, 4), 7, 2, 0.6f)));
 
@@ -107,11 +107,11 @@ public class SarilMod implements ModInitializer {
 			});
 
 		TradeOfferHelper.registerVillagerOffers(ModVillagers.MONKEY_KEY, 2, factories -> {
-			factories.add(((entity, random) -> new TradeOffer(
+			factories.add(((world,entity, random) -> new TradeOffer(
 					new TradedItem(Items.EMERALD, 15),
 					new ItemStack(ModItems.CHISEL, 1), 3, 5, 0.12f)));
 
-			factories.add(((entity, random) -> new TradeOffer(
+			factories.add(((world,entity, random) -> new TradeOffer(
 					new TradedItem(ModItems.UNSTABLE_SOLAR_MATTER, 20),
 					new ItemStack(ModItems.SOLAR_MATTER_HAMMER, 1), 3, 10, 0.18f)));
 
@@ -119,7 +119,7 @@ public class SarilMod implements ModInitializer {
 		});
 
 		TradeOfferHelper.registerWanderingTraderOffers( factories ->
-				factories.addAll(Identifier.of(SarilMod.MOD_ID, "emerald_for_chisel"), (entity, random) -> new TradeOffer(
+				factories.addAll(Identifier.of(SarilMod.MOD_ID, "emerald_for_chisel"),  (world,entity, random) -> new TradeOffer(
 						new TradedItem(Items.EMERALD, 128),
 						new ItemStack(ModItems.TOMAHAWK, 1), 4, 2000, 20)));
 

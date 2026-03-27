@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:solar_matter_block"
+        "recipe": "sarilmod:solar_matter_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:solar_matter_block"
+      "sarilmod:solar_matter_block"
     ]
   }
 }

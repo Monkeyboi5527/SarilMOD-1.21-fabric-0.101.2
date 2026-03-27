@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:unstable_solar_matter_block"
+        "recipe": "sarilmod:unstable_solar_matter_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:unstable_solar_matter_block"
+      "sarilmod:unstable_solar_matter_block"
     ]
   }
 }

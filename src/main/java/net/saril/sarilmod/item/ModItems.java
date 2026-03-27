@@ -17,6 +17,7 @@ import net.saril.sarilmod.block.ModBlocks;
 import net.saril.sarilmod.entity.ModEntities;
 import net.saril.sarilmod.item.custom.ChiselItem;
 import net.saril.sarilmod.item.custom.HammerItem;
+import net.saril.sarilmod.item.custom.ModArmorItem;
 import net.saril.sarilmod.item.custom.TomahawkItem;
 import net.saril.sarilmod.sound.ModSounds;
 
@@ -61,25 +62,25 @@ public class ModItems {
             setting -> new HammerItem(ModToolMaterials.SOLAR_MATTER, 36, -3.0f, setting.rarity(Rarity.EPIC)));
 
     public static final Item SOLAR_MATTER_HELMET = registerItem("solar_matter_helmet",
-            setting -> new Item(setting.armor(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.HELMET)
+            setting -> new ModArmorItem(setting.armor(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.HELMET)
                     .maxDamage(EquipmentType.HELMET.getMaxDamage(15))
                     .rarity(Rarity.EPIC)
                     .fireproof()));
 
     public static final Item SOLAR_MATTER_CHESTPLATE = registerItem("solar_matter_chestplate",
-            setting -> new Item(setting.armor(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)
+            setting -> new ModArmorItem(setting.armor(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.CHESTPLATE)
                     .maxDamage(EquipmentType.CHESTPLATE.getMaxDamage(15))
                     .rarity(Rarity.EPIC)
                     .fireproof()));
 
     public static final Item SOLAR_MATTER_LEGGINGS = registerItem("solar_matter_leggings",
-            setting -> new Item(setting.armor(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.LEGGINGS)
+            setting -> new ModArmorItem(setting.armor(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.LEGGINGS)
                     .maxDamage(EquipmentType.LEGGINGS.getMaxDamage(15))
                     .rarity(Rarity.EPIC)
                     .fireproof()));
 
     public static final Item SOLAR_MATTER_BOOTS = registerItem("solar_matter_boots",
-            setting -> new Item(setting.armor(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.BOOTS)
+            setting -> new ModArmorItem(setting.armor(ModArmorMaterials.SOLAR_MATTER_ARMOR_MATERIAL, EquipmentType.BOOTS)
                     .maxDamage(EquipmentType.BOOTS.getMaxDamage(15))
                     .rarity(Rarity.EPIC)
                     .fireproof()));

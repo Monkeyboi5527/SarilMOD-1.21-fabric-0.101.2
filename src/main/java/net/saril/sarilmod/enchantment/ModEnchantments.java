@@ -3,11 +3,8 @@ package net.saril.sarilmod.enchantment;
 import net.minecraft.component.EnchantmentEffectComponentTypes;
 import net.minecraft.component.type.AttributeModifierSlot;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.effect.EnchantmentEffectTarget;
-import net.minecraft.enchantment.effect.EnchantmentEntityEffect;
 import net.minecraft.registry.Registerable;
-import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.EnchantmentTags;
@@ -30,7 +27,6 @@ public class ModEnchantments {
 
         register(registerable, LIGHTNING_STRIKER, Enchantment.builder(Enchantment.definition(
                         items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
-                        items.getOrThrow(ItemTags.SWORD_ENCHANTABLE),
                         5,
                         2,
                         Enchantment.leveledCost(5, 7),
@@ -44,7 +40,6 @@ public class ModEnchantments {
 
         register(registerable, TEST, Enchantment.builder(Enchantment.definition(
                         items.getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
-                        items.getOrThrow(ItemTags.SWORD_ENCHANTABLE),
                         5,
                         4,
                         Enchantment.leveledCost(5, 7),
